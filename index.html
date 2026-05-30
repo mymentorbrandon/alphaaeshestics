@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alpharetta, GA Med Spa | Alpha Aesthetics & Health</title>
+  <link rel="icon" type="image/webp" href="images/logo.webp" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <style>
     /* ── VARIABLES ── */
@@ -69,7 +70,7 @@
 
     /* ── HERO ── */
     .hero {
-      background: url('https://assets.cdn.filesafe.space/aAdYcGX60HqZV83oFzoF/media/507b71a7-8e86-43db-af36-266b4dbc7eb2.jpeg') center/cover no-repeat;
+      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('images/herophoto.jpg') center/cover no-repeat;
       min-height: 85vh;
       display: flex;
       align-items: center;
@@ -164,26 +165,63 @@
       padding: 14px; text-align: center;
     }
 
-    /* ── TECHNOLOGIES ── */
-    .tech { background: var(--teal-dark); color: var(--white); text-align: center; }
-    .tech .section-title { color: var(--white); }
-    .tech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
-    .tech-card {
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.2);
-      padding: 36px 24px;
-      border-radius: 4px;
-    }
-    .tech-card h3 { font-size: 16px; letter-spacing: 3px; margin-bottom: 12px; }
-    .tech-card p { font-size: 13px; color: rgba(255,255,255,0.8); line-height: 1.8; }
+   /* ── TECHNOLOGIES ── */
+.tech {
+  background: linear-gradient(rgba(74,143,160,0.45), rgba(74,143,160,0.45)),
+              url('images/Beauty-technology.jpg') center/cover no-repeat fixed;
+  color: var(--white);
+  text-align: center;
+  padding: 80px 8%;
+}
+.tech .section-label { color: rgba(255,255,255,0.85); letter-spacing: 4px; font-size: 16px; }
+.tech .section-title {
+  color: var(--white);
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+.tech-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: 40px;
+}
+.tech-card {
+  background: rgba(20,30,40,0.85);
+  padding: 20px 60px;
+  border-radius: 2px;
+  width: 400px;
+  cursor: pointer;
+  transition: background .2s;
+}
+.tech-card:hover { background: rgba(20,30,40,1); }
+.tech-card h3 {
+  font-size: 13px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  color: var(--white);
+}
+.tech-card p { display: none; }
 
-    /* ── PROVIDER ── */
-    .provider { background: var(--white); }
-    .provider-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px; align-items: center; }
-    .provider img { border-radius: 4px; width: 100%; max-height: 500px; object-fit: cover; }
-    .provider p { font-size: 13px; line-height: 1.9; color: #555; margin-bottom: 14px; letter-spacing: 0.5px; }
-    .provider h2 { font-size: 13px; letter-spacing: 3px; color: var(--teal); margin-bottom: 6px; font-weight: 700; }
-    .provider h3 { font-family: 'Cormorant Garamond', serif; font-size: 36px; color: var(--teal-dark); margin-bottom: 20px; }
+/* ── PROVIDER ── */
+.provider { background: var(--white); padding: 80px 8%; }
+.provider-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 60px;
+  align-items: center;
+}
+.provider img {
+  border-radius: 4px;
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+}
+.provider h2 { font-size: 13px; letter-spacing: 3px; color: var(--teal); margin-bottom: 6px; font-weight: 700; }
+.provider h3 { font-family: 'Cormorant Garamond', serif; font-size: 36px; color: var(--teal-dark); margin-bottom: 20px; }
+.provider p { font-size: 13px; line-height: 1.9; color: #555; margin-bottom: 14px; }
 
     /* ── FAQ ── */
     .faq { background: var(--light); }
@@ -245,7 +283,7 @@
 
 <!-- NAV -->
 <nav>
-  <img class="logo" src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/aAdYcGX60HqZV83oFzoF/media/fbb10623-8998-4c02-8a95-61523165f6f6.png" alt="Alpha Aesthetics Logo" />
+  <img class="logo" src="images/logo.webp" alt="Alpha Aesthetics Logo" />
   <ul class="nav-links">
     <li><a href="#">HOME</a></li>
     <li><a href="#">CONTACT</a></li>
@@ -272,7 +310,7 @@
       <p>At Alpha Aesthetics and Health, we offer a comprehensive range of treatments tailored to meet your unique needs. Our team is committed to delivering personalized care, utilizing state-of-the-art techniques and cutting-edge equipment to ensure outstanding results.</p>
       <a href="#" class="btn btn-teal" style="margin-top:10px;">ABOUT US</a>
     </div>
-    <img src="https://assets.cdn.filesafe.space/aAdYcGX60HqZV83oFzoF/media/2b7cdb22-9a3f-4448-8103-7b274c076bb1.png" alt="Alpha Aesthetics interior" style="border-radius:4px;" />
+    <img src="images/frontoffice.webp" alt="Alpha Aesthetics interior" style="border-radius:4px;" />
   </div>
 </section>
 
@@ -288,7 +326,7 @@
     </div>
     <div class="testimonial-card">
       <div class="stars">★★★★★</div>
-      <p>"Kiran is incredibly knowledgeable and makes you feel at ease. Best med spa in Alpharetta!"</p>
+      <p>"Dr. Heisser is incredibly knowledgeable and makes you feel at ease. Best med spa in Alpharetta!"</p>
       <div class="author">— Google Review</div>
     </div>
     <div class="testimonial-card">
@@ -389,7 +427,7 @@
 <footer>
   <div class="footer-grid">
     <div>
-      <h4>ALPHA AESTHETICS & HEALTH</h4>
+      <img src="images/logoblackandwhite.png" alt="Alpha Aesthetics Logo" style="height:80px; margin-bottom:16px;" />
       <p>3450 Old Milton Parkway<br>Alpharetta, GA 30005</p>
       <p style="margin-top:10px;"><a href="tel:4706104550">(470) 610-4550</a></p>
       <div class="social-links">
@@ -403,13 +441,31 @@
       <p>Monday – Friday: 9:00 AM – 5:00 PM</p>
       <p>Saturday: By Appointment Only</p>
       <p>Sunday: Closed</p>
-    </div>
-    <div>
+      <br>
       <h4>QUICK LINKS</h4>
       <p><a href="#">Home</a></p>
       <p><a href="#">Contact Us</a></p>
       <p><a href="#">Schedule Appointment</a></p>
       <p><a href="#">Privacy & Disclaimer</a></p>
+    </div>
+    <div>
+      <h4>FIND US</h4>
+      <a href="https://maps.app.goo.gl/EPQrHrrZsG3oUBD18" target="_blank">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3308.5!2d-84.2977!3d34.0754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f571279bd38099%3A0x8aaaf6c477bb84!2s3450%20Old%20Milton%20Pkwy%20%23100%2C%20Alpharetta%2C%20GA%2030005!5e0!3m2!1sen!2sus!4v1"
+          width="100%"
+          height="200"
+          style="border:0; border-radius:4px; display:block; margin-top:8px;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </a>
+      <p style="margin-top:8px; font-size:12px;">
+        <a href="https://maps.app.goo.gl/EPQrHrrZsG3oUBD18" target="_blank">
+          📍 3450 Old Milton Pkwy #100, Alpharetta, GA — Click to open in Google Maps
+        </a>
+      </p>
     </div>
   </div>
   <div class="footer-bottom">
@@ -417,6 +473,3 @@
     <p style="margin-top:6px;font-size:11px;">Individual results are not guaranteed and may vary from person to person. Images may contain models.</p>
   </div>
 </footer>
-
-</body>
-</html>
