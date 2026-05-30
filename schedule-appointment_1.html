@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Schedule and appointment with AlphaAestheticsAndHealth" />
+  <title>Med Spa Appointment Scheduler | Alpha Aesthetics</title>
+
+  <!-- Google Fonts — matching original site -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── Reset ─────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      /* Original site palette */
+      --navy:      #1a2a3a;      /* dark navy — header, footer, section bg */
+      --navy-dark: #0f1e2d;      /* deeper navy for footer */
+      --teal:      #2e7d6e;      /* primary button / accent green-teal */
+      --teal-hover:#255f54;      /* button hover */
+      --white:     #ffffff;
+      --off-white: #f7f7f7;      /* page background */
+      --light-bg:  #f2f2f2;      /* section alternating bg */
+      --text-dark: #1a1a1a;      /* body copy */
+      --text-mid:  #444444;      /* secondary copy */
+      --text-light:#777777;      /* muted / breadcrumb */
+      --border:    #e0e0e0;
+      --nav-h:     80px;
+      --bar-h:     42px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--white);
+      color: var(--text-dark);
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ─── Top Promo Bar ──────────────────────────────────────── */
+    .promo-bar {
+      background: var(--navy);
+      color: #ffffff;
+      text-align: center;
+      padding: 0 16px;
+      height: var(--bar-h);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      font-family: 'Raleway', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+    }
+
+    .promo-bar strong { font-weight: 700; color: #fff; }
+
+    .promo-btn {
+      background: var(--teal);
+      color: #fff;
+      padding: 7px 18px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .promo-btn:hover { background: var(--teal-hover); }
+
+    .promo-phone {
+      color: rgba(255,255,255,0.8);
+      font-size: 13px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ─── Navigation ─────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      padding: 0 48px;
+      justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .nav-logo img {
+      height: 52px;
+      width: auto;
+    }
+
+    .nav-logo-fallback {
+      font-family: 'Raleway', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--navy);
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'Raleway', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--navy);
+      transition: color 0.2s;
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--teal);
+      transition: width 0.25s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--teal); }
+    .nav-links a:hover::after,
+    .nav-links a.active::after { width: 100%; }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .btn-primary {
+      background: var(--teal);
+      color: #fff;
+      padding: 11px 24px;
+      font-family: 'Raleway', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: 2px solid var(--teal);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-primary:hover { background: var(--teal-hover); border-color: var(--teal-hover); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--teal);
+      padding: 11px 24px;
+      font-family: 'Raleway', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: 2px solid var(--teal);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-outline:hover { background: var(--teal); color: #fff; }
+
+    .btn-navy {
+      background: var(--navy);
+      color: #fff;
+      padding: 11px 24px;
+      font-family: 'Raleway', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: 2px solid var(--navy);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-navy:hover { background: #0f1e2d; }
+
+    /* ─── Hamburger ──────────────────────────────────────────── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--navy); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--white);
+      z-index: 200;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: 'Raleway', sans-serif;
+      font-size: 18px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--navy);
+      font-weight: 600;
+    }
+    .mobile-menu .close-btn {
+      position: absolute;
+      top: 20px; right: 24px;
+      font-size: 28px;
+      cursor: pointer;
+      color: var(--navy);
+      background: none;
+      border: none;
+    }
+
+    /* ─── Breadcrumb ─────────────────────────────────────────── */
+    .breadcrumb {
+      background: var(--light-bg);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 48px;
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      color: var(--text-light);
+      letter-spacing: 0.03em;
+    }
+    .breadcrumb a { color: var(--text-light); transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--teal); }
+    .breadcrumb span { color: var(--text-mid); }
+
+    /* ─── Page Hero / Main Content ───────────────────────────── */
+    .page-hero {
+      background: var(--white);
+      padding: 72px 48px 80px;
+    }
+
+    .page-hero-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .hero-text h1 {
+      font-family: 'Raleway', sans-serif;
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--navy);
+      margin-bottom: 24px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .hero-text p {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.85;
+      color: var(--text-mid);
+      margin-bottom: 14px;
+      max-width: 460px;
+    }
+
+    .contact-block {
+      margin-top: 40px;
+      border-top: 2px solid var(--border);
+      padding-top: 32px;
+    }
+
+    .contact-label-row {
+      font-family: 'Raleway', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 20px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-icon svg { width: 18px; height: 18px; stroke: #fff; fill: none; stroke-width: 1.8; }
+
+    .contact-sub {
+      font-family: 'Raleway', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 4px;
+    }
+    .contact-val {
+      font-size: 14px;
+      color: var(--navy);
+      font-weight: 400;
+    }
+    .contact-val a { color: var(--teal); }
+    .contact-val a:hover { text-decoration: underline; }
+
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+
+    /* ─── Hero image ─────────────────────────────────────────── */
+    .hero-image img {
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ─── Calendar Section ───────────────────────────────────── */
+    .calendar-section {
+      background: var(--off-white);
+      border-top: 1px solid var(--border);
+      padding: 80px 48px;
+    }
+
+    .section-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+
+    .section-eyebrow {
+      font-family: 'Raleway', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Raleway', sans-serif;
+      font-size: clamp(26px, 3vw, 40px);
+      font-weight: 300;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 14px;
+      line-height: 1.2;
+    }
+
+    .section-desc {
+      font-size: 15px;
+      color: var(--text-mid);
+      max-width: 580px;
+      line-height: 1.8;
+      margin-bottom: 48px;
+    }
+
+    /* ─── Calendar embed box ─────────────────────────────────── */
+    .calendar-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      min-height: 620px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .calendar-box iframe {
+      width: 100%;
+      height: 620px;
+      border: none;
+      display: block;
+    }
+
+    /* Placeholder (shown until iframe is configured) */
+    .cal-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 620px;
+      gap: 20px;
+      text-align: center;
+      padding: 48px 32px;
+    }
+
+    .cal-placeholder svg {
+      width: 52px; height: 52px;
+      stroke: var(--teal);
+      fill: none;
+      stroke-width: 1.2;
+      opacity: 0.8;
+    }
+
+    .cal-placeholder h3 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 24px;
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--navy);
+    }
+
+    .cal-placeholder p {
+      font-size: 14px;
+      color: var(--text-mid);
+      max-width: 420px;
+      line-height: 1.75;
+    }
+
+    .cal-placeholder code {
+      font-size: 12px;
+      background: var(--light-bg);
+      border: 1px solid var(--border);
+      color: var(--text-mid);
+      padding: 12px 20px;
+      display: block;
+      max-width: 540px;
+      font-family: 'Courier New', monospace;
+      text-align: left;
+      word-break: break-all;
+      line-height: 1.6;
+    }
+
+    .setup-steps {
+      font-size: 13px;
+      color: var(--text-mid);
+      background: #eaf5f2;
+      border-left: 3px solid var(--teal);
+      padding: 14px 18px;
+      text-align: left;
+      max-width: 520px;
+      line-height: 1.75;
+    }
+    .setup-steps strong { color: var(--teal); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+
+    /* ─── Alt contact cards ──────────────────────────────────── */
+    .alt-cards {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .alt-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 32px 28px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      transition: box-shadow 0.2s;
+    }
+    .alt-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+    .alt-icon {
+      width: 48px; height: 48px;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .alt-icon svg { width: 22px; height: 22px; stroke: #fff; fill: none; stroke-width: 1.6; }
+
+    .alt-body h4 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .alt-body p { font-size: 13px; color: var(--text-mid); line-height: 1.7; margin-bottom: 12px; }
+    .alt-body a { font-size: 14px; color: var(--teal); font-weight: 700; }
+    .alt-body a:hover { text-decoration: underline; }
+
+    /* ─── Map / Location Section ─────────────────────────────── */
+    .location-section {
+      background: var(--navy);
+      padding: 80px 48px;
+    }
+
+    .location-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .location-map a { display: block; }
+    .location-map img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border: 3px solid rgba(255,255,255,0.1);
+      transition: opacity 0.2s;
+    }
+    .location-map img:hover { opacity: 0.88; }
+
+    .location-info .eyebrow {
+      font-family: 'Raleway', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 14px;
+    }
+
+    .location-info h3 {
+      font-family: 'Raleway', sans-serif;
+      font-size: clamp(24px, 2.5vw, 36px);
+      font-weight: 300;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 24px;
+    }
+
+    .location-info p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.85;
+      margin-bottom: 8px;
+    }
+
+    .location-info a { color: rgba(255,255,255,0.85); }
+    .location-info a:hover { color: #fff; text-decoration: underline; }
+
+    .hours-table {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 8px 24px;
+      font-size: 13px;
+    }
+    .h-day  { color: rgba(255,255,255,0.55); }
+    .h-time { color: rgba(255,255,255,0.85); }
+
+    .location-info .cta-row { margin-top: 32px; }
+
+    /* ─── Social icons row ───────────────────────────────────── */
+    .social-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .social-row a {
+      width: 36px; height: 36px;
+      border: 1px solid rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .social-row a:hover { border-color: var(--teal); background: rgba(46,125,110,0.2); }
+    .social-row img { width: 16px; height: 16px; }
+
+    /* ─── Disclaimer ─────────────────────────────────────────── */
+    .disclaimer {
+      background: var(--light-bg);
+      border-top: 1px solid var(--border);
+      padding: 20px 48px;
+      font-size: 12px;
+      color: var(--text-light);
+      font-style: italic;
+    }
+
+    /* ─── Footer ─────────────────────────────────────────────── */
+    footer {
+      background: var(--navy-dark);
+      color: rgba(255,255,255,0.7);
+      padding: 56px 48px 28px;
+    }
+
+    .footer-inner { max-width: 1160px; margin: 0 auto; }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 28px;
+    }
+
+    .footer-brand-name {
+      font-family: 'Raleway', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+
+    .footer-brand p { font-size: 13px; line-height: 1.85; max-width: 280px; }
+
+    .footer-col h5 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 18px;
+    }
+
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul a { font-size: 13px; color: rgba(255,255,255,0.65); transition: color 0.2s; }
+    .footer-col ul a:hover { color: #fff; }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.04em;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .footer-bottom a { color: inherit; transition: color 0.2s; }
+    .footer-bottom a:hover { color: rgba(255,255,255,0.7); }
+
+    /* ─── Responsive ─────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      nav { padding: 0 20px; }
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+
+      .promo-bar { font-size: 11px; gap: 12px; padding: 0 12px; }
+
+      .page-hero { padding: 48px 20px 56px; }
+      .page-hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero-image img { height: 280px; }
+
+      .calendar-section { padding: 56px 20px; }
+      .alt-cards { grid-template-columns: 1fr; }
+
+      .location-section { padding: 56px 20px; }
+      .location-inner { grid-template-columns: 1fr; gap: 36px; }
+      .location-map img { height: 240px; }
+
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      footer { padding: 40px 20px 24px; }
+
+      .breadcrumb { padding: 12px 20px; }
+      .disclaimer { padding: 16px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ PROMO BAR ════════════════════════════════════════════ -->
+  <div class="promo-bar">
+    <strong>Receive 20% off your first treatment!</strong>
+    <span class="promo-phone">(470) 610-4550</span>
+    <a href="#calendar" class="promo-btn">Schedule Now</a>
+  </div>
+
+  <!-- ══ NAVIGATION ══════════════════════════════════════════ -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img
+        src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/aAdYcGX60HqZV83oFzoF/media/5debb6c8-378f-4618-b3ed-0e1730e625b0.svg+xml"
+        alt="Alpha Aesthetics And Health"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+      />
+      <span class="nav-logo-fallback" style="display:none;">Alpha Aesthetics</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="schedule-appointment.html" class="active">Schedule Appointment</a></li>
+    </ul>
+
+    <div class="nav-cta">
+      <a href="tel:4706104550" style="font-family:'Raleway',sans-serif; font-size:13px; font-weight:700; color:var(--navy); letter-spacing:0.04em;">(470) 610-4550</a>
+      <a href="#calendar" class="btn-primary">Schedule Now</a>
+    </div>
+
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ══ MOBILE MENU ══════════════════════════════════════════ -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-btn" onclick="toggleMenu()">✕</button>
+    <a href="index.html" onclick="toggleMenu()">Home</a>
+    <a href="contact.html" onclick="toggleMenu()">Contact</a>
+    <a href="schedule-appointment.html" onclick="toggleMenu()">Schedule Appointment</a>
+    <a href="tel:4706104550" class="btn-navy" style="margin-top:12px; padding:14px 32px;">(470) 610-4550</a>
+    <a href="#calendar" class="btn-primary" onclick="toggleMenu()" style="padding:14px 32px;">Schedule Now</a>
+  </div>
+
+  <!-- ══ BREADCRUMB ════════════════════════════════════════════ -->
+  <div class="breadcrumb">
+    <a href="index.html">Home</a> &nbsp;&gt;&nbsp; <span>Schedule Appointment</span>
+  </div>
+
+  <!-- ══ MAIN CONTENT ═════════════════════════════════════════ -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+
+      <div class="hero-text">
+        <h1>Schedule<br/>Your Visit</h1>
+
+        <p>
+          We know that life is hectic and schedules are busy, which is why we strive
+          to make scheduling your visit as convenient as possible. Choose your preferred
+          days and times below and our team will gladly accommodate.
+        </p>
+        <p>
+          Contact our front office staff with any additional questions or concerns.
+        </p>
+
+        <div class="contact-block">
+          <div class="contact-label-row">Questions? Give us a call or send us an email.</div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="contact-sub">Email</div>
+              <div class="contact-val">
+                <a href="mailto:info@alphaaesthetichealth.com">info@alphaaesthetichealth.com</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.92 16z"/></svg>
+            </div>
+            <div>
+              <div class="contact-sub">Phone</div>
+              <div class="contact-val">
+                <a href="tel:4706104550">(470) 610-4550</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="cta-row">
+            <a href="tel:4706104550" class="btn-primary">Call (470) 610-4550</a>
+            <a href="#calendar" class="btn-outline">Book Online</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img
+          src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/aAdYcGX60HqZV83oFzoF/media/a4943aef-3ed7-483e-9c2a-602622cd1f31.png"
+          alt="Alpha Aesthetics clinic"
+        />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ CALENDAR SECTION ══════════════════════════════════════ -->
+  <section class="calendar-section" id="calendar">
+    <div class="section-inner">
+
+      <p class="section-eyebrow">Online Booking</p>
+      <h2 class="section-title">Choose a Date &amp; Time</h2>
+      <p class="section-desc">
+        Select your preferred appointment slot directly from our live calendar.
+        Available times update in real-time — pick a slot, fill in your details, and you're confirmed.
+      </p>
+
+      <!-- ═══════════════════════════════════════════════════════
+           GOOGLE CALENDAR EMBED
+           ───────────────────────────────────────────────────────
+           HOW TO SET UP:
+           1. Go to calendar.google.com → ⚙️ Settings
+           2. Click your business calendar → "Integrate calendar"
+           3. Under Embed Code, copy the src URL
+           4. Paste it as the <iframe src="…"> below
+           5. Delete the <div class="cal-placeholder"> block
+           6. Uncomment the <iframe> element
+           ══════════════════════════════════════════════════════ -->
+      <div class="calendar-box">
+
+        <!--
+        ═══ UNCOMMENT THIS BLOCK AFTER COMPLETING SETUP ABOVE ═══
+        <iframe
+          src="PASTE_YOUR_GOOGLE_CALENDAR_EMBED_URL_HERE"
+          title="Alpha Aesthetics Appointment Calendar"
+          frameborder="0"
+          scrolling="no"
+          loading="lazy">
+        </iframe>
+        ═══════════════════════════════════════════════════════ -->
+
+        <!-- Remove this placeholder once the iframe above is live -->
+        <div class="cal-placeholder">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <h3>Google Calendar Goes Here</h3>
+          <p>Embed your Google Workspace business calendar by replacing the placeholder with your calendar embed URL.</p>
+          <code>https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_ID%40group.calendar.google.com&ctz=America%2FNew_York&mode=WEEK&showTitle=0&showNav=1&showPrint=0&showTabs=0&showCalendars=0</code>
+          <div class="setup-steps">
+            <strong>Setup Steps</strong><br/>
+            1. Google Calendar → ⚙️ Settings → your business calendar → <em>Integrate calendar</em><br/>
+            2. Under Embed Code: set Mode = Week, disable unneeded controls<br/>
+            3. Copy the src URL from the embed snippet<br/>
+            4. Paste into the &lt;iframe src="…"&gt; above and delete this placeholder
+          </div>
+        </div>
+
+      </div><!-- /calendar-box -->
+
+      <!-- Alternate booking methods -->
+      <div class="alt-cards">
+        <div class="alt-card">
+          <div class="alt-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.92 16z"/></svg>
+          </div>
+          <div class="alt-body">
+            <h4>Call Us</h4>
+            <p>Our front desk team is available Monday–Friday, 9 AM–5 PM. Saturdays by appointment only.</p>
+            <a href="tel:4706104550">(470) 610-4550</a>
+          </div>
+        </div>
+
+        <div class="alt-card">
+          <div class="alt-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="alt-body">
+            <h4>Email Us</h4>
+            <p>Send your preferred dates and services and we'll confirm your appointment within one business day.</p>
+            <a href="mailto:info@alphaaesthetichealth.com">info@alphaaesthetichealth.com</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ LOCATION / MAP ════════════════════════════════════════ -->
+  <section class="location-section">
+    <div class="location-inner">
+
+      <div class="location-map">
+        <a href="https://www.google.com/maps/search/?api=1&query=Google&query_place_id=ChIJmYDTbyWf9YgRgfS7dcT6qoo" target="_blank" rel="noopener">
+          <img
+            src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://firebasestorage.googleapis.com/v0/b/highlevel-backend.appspot.com/o/location%2FaAdYcGX60HqZV83oFzoF%2Fimages%2FG9OawOODUlD3K1aS926d%2FChIJmYDTbyWf9YgRgfS7dcT6qoo%2Fmap-Tg-QDpeF3x.jpg?alt=media"
+            alt="3450 Old Milton Pkwy #100, Alpharetta, GA 30005"
+          />
+        </a>
+
+        <div class="social-row" style="margin-top:20px;">
+          <a href="https://www.facebook.com/profile.php?id=61555865313019" target="_blank" rel="noopener" aria-label="Facebook">
+            <img src="https://stcdn.leadconnectorhq.com/funnel/icons/light-gray/facebook-light-gray.svg" alt="Facebook" />
+          </a>
+          <a href="https://www.instagram.com/alphaaestheticshealth/" target="_blank" rel="noopener" aria-label="Instagram">
+            <img src="https://stcdn.leadconnectorhq.com/funnel/icons/light-gray/instagram-light-gray.svg" alt="Instagram" />
+          </a>
+          <a href="https://maps.app.goo.gl/EPQrHrrZsG3oUBD18" target="_blank" rel="noopener" aria-label="Google">
+            <img src="https://stcdn.leadconnectorhq.com/funnel/icons/light-gray/google-light-gray.svg" alt="Google" />
+          </a>
+        </div>
+      </div>
+
+      <div class="location-info">
+        <div class="eyebrow">Our Location</div>
+        <h3>Alpha Aesthetics<br/>And Health</h3>
+        <p>3450 Old Milton Parkway, Suite 100<br/>Alpharetta, GA 30005</p>
+        <p><a href="tel:4706104550">(470) 610-4550</a></p>
+
+        <div class="hours-table">
+          <span class="h-day">Monday – Friday</span>
+          <span class="h-time">9:00 AM – 5:00 PM</span>
+          <span class="h-day">Saturday</span>
+          <span class="h-time">By Appointment Only</span>
+          <span class="h-day">Sunday</span>
+          <span class="h-time">Closed</span>
+        </div>
+
+        <div class="cta-row">
+          <a href="https://www.google.com/maps/search/?api=1&query=Google&query_place_id=ChIJmYDTbyWf9YgRgfS7dcT6qoo"
+             target="_blank" rel="noopener" class="btn-primary">Get Directions</a>
+          <a href="tel:4706104550" class="btn-outline" style="border-color:rgba(255,255,255,0.3); color:#fff;">Call Now</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ DISCLAIMER ════════════════════════════════════════════ -->
+  <div class="disclaimer">
+    *Individual results are not guaranteed and may vary from person to person. Images may contain models.
+  </div>
+
+  <!-- ══ FOOTER ════════════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-brand-name">Alpha Aesthetics And Health</div>
+          <p>
+            Your premier destination for exceptional aesthetic and wellness services
+            in Alpharetta, GA. Enhancing your natural beauty and supporting your
+            overall well-being.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Navigation</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="schedule-appointment.html">Schedule Appointment</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="tel:4706104550">(470) 610-4550</a></li>
+            <li><a href="mailto:info@alphaaesthetichealth.com">info@alphaaesthetichealth.com</a></li>
+            <li><a href="https://www.google.com/maps/search/?api=1&query=Google&query_place_id=ChIJmYDTbyWf9YgRgfS7dcT6qoo" target="_blank" rel="noopener">3450 Old Milton Pkwy #100<br/>Alpharetta, GA 30005</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>
+          <a href="https://alphaaesthetichealth.com/privacy-policy">Privacy &amp; Disclaimer</a>
+          &nbsp;|&nbsp;
+          <a href="https://alphaaesthetichealth.com/sitemap.xml">Sitemap</a>
+          &nbsp;|&nbsp;
+          &copy; Copyright 2026 Alpha Aesthetics And Health
+        </span>
+        <span>Med Spa Alpharetta, GA</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') document.getElementById('mobileMenu').classList.remove('open');
+    });
+  </script>
+
+</body>
+</html>
