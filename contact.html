@@ -4,43 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Request a personalized consultation with the staff at Alpha Aesthetics. Our med spa practice offers several convenient locations throughout the Alpharetta, GA area." />
-  <meta property="og:title" content="Request Consultation with Alpha Aesthetics" />
+  <meta property="og:title" content="Contact Us | Alpha Aesthetics & Health" />
   <meta property="og:type" content="website" />
-  <title>Request Consultation with Alpha Aesthetics</title>
+  <title>Contact Us | Alpha Aesthetics & Health</title>
   <link rel="icon" type="image/webp" href="images/logo.webp" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css" />
 
   <style>
-    /* ── INTERNATIONAL PHONE INPUT ── */
-    .iti { width: 100%; }
-    .iti__tel-input {
-      width: 100%;
-      padding: 12px 16px 12px 52px !important;
-      border: 1px solid #ddd !important;
-      border-radius: 2px !important;
-      font-family: 'Montserrat', sans-serif !important;
-      font-size: 13px !important;
-      color: var(--text) !important;
-      outline: none !important;
-    }
-    .iti__tel-input:focus {
-      border-color: var(--teal) !important;
-    }
-    .iti__flag-container {
-      border-right: 1px solid #ddd;
-    }
-
-    /* ── VARIABLES (matches index.html exactly) ── */
+    /* ── VARIABLES (matches index.html) ── */
     :root {
-      --teal: #4a8fa0;
+      --teal:      #4a8fa0;
       --teal-dark: #3a7080;
-      --gray: #8a8a8a;
-      --light: #f7f5f3;
-      --white: #ffffff;
-      --text: #333;
+      --gray:      #8a8a8a;
+      --light:     #f7f5f3;
+      --white:     #ffffff;
+      --text:      #333;
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Montserrat', sans-serif; color: var(--text); background: var(--white); }
     a { text-decoration: none; color: inherit; }
     img { max-width: 100%; display: block; }
@@ -79,7 +60,7 @@
     .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
     .nav-links a {
       font-size: 12px; letter-spacing: 2px; font-weight: 600;
-      color: var(--gray); transition: color .2s;
+      color: var(--gray); transition: color .2s; text-transform: uppercase;
     }
     .nav-links a:hover, .nav-links a.active { color: var(--teal); }
     .nav-cta {
@@ -93,7 +74,7 @@
     }
     .nav-cta:hover { background: var(--teal-dark) !important; }
 
-    /* Hamburger */
+    /* ── HAMBURGER ── */
     .hamburger {
       display: none;
       flex-direction: column;
@@ -103,12 +84,9 @@
       border: none;
       padding: 4px;
     }
-    .hamburger span {
-      display: block; width: 24px; height: 2px;
-      background: var(--text);
-    }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--text); }
 
-    /* Mobile menu */
+    /* ── MOBILE MENU ── */
     .mobile-menu {
       display: none;
       position: fixed;
@@ -145,47 +123,31 @@
     .breadcrumb a:hover { color: var(--teal); }
     .breadcrumb .sep { margin: 0 8px; }
 
-    /* ── BTN ── */
-    .btn {
-      display: inline-block;
-      padding: 14px 32px;
-      font-size: 12px;
-      letter-spacing: 2px;
-      font-weight: 700;
-      border-radius: 2px;
-      transition: background .2s;
-      cursor: pointer;
-      border: none;
-      font-family: 'Montserrat', sans-serif;
-    }
-    .btn-teal { background: var(--teal); color: var(--white); }
-    .btn-teal:hover { background: var(--teal-dark); }
-
-    /* ── PAGE HERO ── */
+    /* ── HERO BANNER ── */
     .page-hero {
-      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+      background: linear-gradient(rgba(0,0,0,0.48), rgba(0,0,0,0.48)),
                   url('https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/aAdYcGX60HqZV83oFzoF/media/a4943aef-3ed7-483e-9c2a-602622cd1f31.png')
                   center/cover no-repeat;
-      padding: 80px 5%;
+      padding: 90px 5%;
       text-align: center;
     }
     .page-hero h1 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(36px, 5vw, 62px);
+      font-size: clamp(38px, 5vw, 64px);
       color: var(--white);
       text-transform: uppercase;
-      letter-spacing: 4px;
+      letter-spacing: 5px;
       line-height: 1.15;
     }
     .page-hero p {
-      color: rgba(255,255,255,0.8);
+      color: rgba(255,255,255,0.75);
       font-size: 12px;
       letter-spacing: 3px;
-      margin-top: 14px;
+      margin-top: 16px;
       text-transform: uppercase;
     }
 
-    /* ── MAIN CONTACT LAYOUT ── */
+    /* ── MAIN LAYOUT ── */
     .contact-section {
       padding: 80px 5%;
       background: var(--white);
@@ -194,34 +156,42 @@
       max-width: 1100px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 72px;
       align-items: start;
     }
 
-    /* ── LEFT: CONTACT FORM ── */
-    .contact-form-wrap h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 38px;
-      color: var(--teal-dark);
+    /* ── LEFT: FORM ── */
+    .form-wrap .eyebrow {
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: var(--teal);
+      text-transform: uppercase;
       margin-bottom: 10px;
+      font-weight: 600;
+    }
+    .form-wrap h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 40px;
+      color: var(--teal-dark);
+      margin-bottom: 8px;
       text-transform: lowercase;
       letter-spacing: 1px;
+      line-height: 1.2;
     }
-    .contact-form-wrap .sub {
-      font-size: 12px;
-      letter-spacing: 2px;
+    .form-wrap .intro {
+      font-size: 13px;
       color: var(--gray);
-      text-transform: uppercase;
-      margin-bottom: 32px;
+      line-height: 1.8;
+      margin-bottom: 36px;
+      max-width: 480px;
     }
 
-    .form-group {
-      margin-bottom: 20px;
-    }
+    /* Form fields */
+    .form-group { margin-bottom: 20px; }
     .form-group label {
       display: block;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
@@ -242,15 +212,21 @@
       transition: border-color 0.2s;
       outline: none;
       appearance: none;
+      -webkit-appearance: none;
     }
     .form-group input:focus,
     .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: var(--teal);
-    }
-    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-group textarea:focus { border-color: var(--teal); }
+    .form-group textarea { resize: vertical; min-height: 130px; }
 
-    /* Select arrow */
+    /* Two-column row */
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    /* Select wrapper (custom arrow) */
     .select-wrap { position: relative; }
     .select-wrap::after {
       content: '▾';
@@ -262,17 +238,10 @@
       font-size: 14px;
     }
 
-    /* Two-col row inside form */
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-
-    /* Patient status radio group */
+    /* Patient status radio */
     .radio-group {
       display: flex;
-      gap: 20px;
+      gap: 24px;
       flex-wrap: wrap;
       margin-top: 4px;
     }
@@ -290,71 +259,141 @@
     .radio-group input[type="radio"] {
       width: auto;
       accent-color: var(--teal);
+      cursor: pointer;
     }
 
-    .form-submit {
-      margin-top: 8px;
+    /* intl-tel-input overrides */
+    .iti { width: 100%; }
+    .iti__tel-input {
+      width: 100% !important;
+      padding: 12px 16px 12px 52px !important;
+      border: 1px solid #ddd !important;
+      border-radius: 2px !important;
+      font-family: 'Montserrat', sans-serif !important;
+      font-size: 13px !important;
+      color: var(--text) !important;
+      outline: none !important;
+      transition: border-color 0.2s !important;
     }
-    .form-submit .btn-teal {
+    .iti__tel-input:focus { border-color: var(--teal) !important; }
+    .iti__flag-container { border-right: 1px solid #e0e0e0; }
+
+    /* Submit button */
+    .btn-submit {
       width: 100%;
-      text-align: center;
       padding: 15px 32px;
-      font-size: 12px;
-      letter-spacing: 2.5px;
-    }
-
-    /* ── RIGHT: CONTACT INFO ── */
-    .contact-info-wrap {
-      padding-top: 8px;
-    }
-
-    /* Map image */
-    .contact-map {
-      width: 100%;
-      margin-bottom: 36px;
-      border-radius: 2px;
-      overflow: hidden;
-      border: 1px solid #e5e5e5;
-    }
-    .contact-map iframe {
-      width: 100%;
-      height: 220px;
+      background: var(--teal);
+      color: var(--white);
       border: none;
-      display: block;
+      border-radius: 2px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 6px;
+    }
+    .btn-submit:hover { background: var(--teal-dark); }
+
+    /* Thank you message */
+    .thank-you {
+      display: none;
+      text-align: center;
+      padding: 48px 32px;
+      border: 1px solid #e5e5e5;
+      border-radius: 2px;
+      background: var(--light);
+    }
+    .thank-you .checkmark {
+      width: 56px; height: 56px;
+      background: var(--teal);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .thank-you .checkmark svg {
+      width: 28px; height: 28px;
+      stroke: #fff; fill: none; stroke-width: 2.5;
+    }
+    .thank-you h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 30px;
+      color: var(--teal-dark);
+      margin-bottom: 12px;
+    }
+    .thank-you p {
+      font-size: 13px;
+      color: var(--gray);
+      line-height: 1.8;
+      max-width: 380px;
+      margin: 0 auto;
     }
 
-    /* Info blocks */
+    /* ── RIGHT: INFO PANEL ── */
+    .info-panel {
+      background: var(--light);
+      padding: 40px 36px;
+      border-radius: 2px;
+    }
+    .info-panel .panel-title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 28px;
+    }
+
     .info-block {
       margin-bottom: 28px;
       padding-bottom: 28px;
-      border-bottom: 1px solid #eeeeee;
+      border-bottom: 1px solid #e2e0de;
     }
     .info-block:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
 
     .info-block .info-label {
       font-size: 10px;
       font-weight: 700;
-      letter-spacing: 3px;
+      letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--teal);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
-    .info-block h5 {
+    .info-block .info-icon-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .info-block .info-icon {
+      width: 36px; height: 36px;
+      background: var(--teal);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .info-block .info-icon svg {
+      width: 16px; height: 16px;
+      stroke: #fff; fill: none; stroke-width: 2;
+    }
+    .info-block .info-text h5 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 600;
       color: var(--teal-dark);
-      margin-bottom: 4px;
-      font-style: normal;
+      margin-bottom: 2px;
     }
-    .info-block p, .info-block a {
-      font-size: 14px;
+    .info-block .info-text p,
+    .info-block .info-text a {
+      font-size: 13px;
       line-height: 1.8;
-      color: var(--text);
+      color: #555;
     }
-    .info-block a:hover { color: var(--teal); text-decoration: underline; }
+    .info-block .info-text a:hover { color: var(--teal); text-decoration: underline; }
 
-    /* Hours table */
+    /* Hours */
     .hours-grid {
       display: grid;
       grid-template-columns: auto 1fr;
@@ -365,29 +404,35 @@
     .hours-day { font-weight: 600; color: var(--text); }
     .hours-time { color: #555; }
 
-    /* Social row */
-    .social-links {
-      display: flex;
-      gap: 12px;
-      margin-top: 16px;
+    /* Map in info panel */
+    .info-map {
+      width: 100%;
+      border-radius: 2px;
+      overflow: hidden;
+      margin-bottom: 28px;
+      border: 1px solid #e0e0e0;
     }
-    .social-links a {
-      width: 36px; height: 36px;
+    .info-map iframe {
+      width: 100%; height: 180px;
+      border: none; display: block;
+    }
+
+    /* Social icons */
+    .social-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .social-row a {
+      width: 34px; height: 34px;
       border: 1px solid rgba(0,0,0,0.15);
       display: flex; align-items: center; justify-content: center;
       border-radius: 50%;
       transition: background .2s, border-color .2s;
       color: var(--text);
     }
-    .social-links a:hover {
-      background: var(--teal);
-      border-color: var(--teal);
-      color: var(--white);
-    }
-    .social-links svg {
-      width: 16px; height: 16px;
-      fill: currentColor;
-    }
+    .social-row a:hover { background: var(--teal); border-color: var(--teal); color: var(--white); }
+    .social-row svg { width: 15px; height: 15px; fill: currentColor; }
 
     /* ── DISCLAIMER ── */
     .disclaimer {
@@ -400,7 +445,7 @@
       text-align: center;
     }
 
-    /* ── FOOTER ── */
+    /* ── FOOTER (matches index.html) ── */
     footer {
       background: #2a2a2a;
       color: rgba(255,255,255,0.7);
@@ -441,7 +486,8 @@
       .contact-inner { grid-template-columns: 1fr; gap: 48px; }
       .form-row { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; }
-      .page-hero { padding: 60px 5%; }
+      .page-hero { padding: 64px 5%; }
+      .info-panel { padding: 28px 20px; }
     }
   </style>
 </head>
@@ -450,7 +496,7 @@
 <!-- ── TOP BANNER ── -->
 <div class="top-banner">
   Receive 20% off your first treatment!
-  <a href="https://mymentorbrandon.github.io/alpha-aesthetics/schedule-appointment.html">SCHEDULE NOW</a>
+  <a href="contact.html">CONTACT US</a>
 </div>
 
 <!-- ── NAV ── -->
@@ -461,8 +507,7 @@
   </a>
   <ul class="nav-links">
     <li><a href="index.html">HOME</a></li>
-    <li><a href="contact.html" class="active" style="color:var(--teal);">CONTACT</a></li>
-    <li><a href="https://mymentorbrandon.github.io/alpha-aesthetics/schedule-appointment.html" class="nav-cta">SCHEDULE APPOINTMENT</a></li>
+    <li><a href="contact.html" class="active" style="color:var(--teal);">CONTACT US</a></li>
   </ul>
   <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -473,10 +518,10 @@
 <div class="mobile-menu" id="mobileMenu">
   <button class="close-btn" onclick="document.getElementById('mobileMenu').classList.remove('open')">✕</button>
   <a href="index.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Home</a>
-  <a href="contact.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Contact</a>
-  <a href="https://mymentorbrandon.github.io/alpha-aesthetics/schedule-appointment.html"
+  <a href="contact.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Contact Us</a>
+  <a href="contact.html"
      style="background:var(--teal); color:#ffffff; padding:12px 28px; border-radius:2px; letter-spacing:2px; font-size:12px; font-weight:700;">
-    SCHEDULE APPOINTMENT
+    CONTACT US
   </a>
   <a href="tel:4706104550"
      style="background:#1c2b3a; color:#ffffff; padding:12px 28px; border-radius:2px; letter-spacing:2px; font-size:12px; font-weight:700;">
@@ -491,26 +536,24 @@
   <span>Contact Us</span>
 </div>
 
-<!-- ── PAGE HERO ── -->
+<!-- ── HERO ── -->
 <div class="page-hero">
   <h1>Contact Us</h1>
-  <p>We'd love to hear from you</p>
+  <p>Let's start your wellness journey</p>
 </div>
 
-<!-- ── MAIN CONTACT SECTION ── -->
+<!-- ── MAIN CONTENT ── -->
 <section class="contact-section">
   <div class="contact-inner">
 
-    <!-- LEFT: Form -->
-    <div class="contact-form-wrap">
-      <p class="sub">Get in touch</p>
+    <!-- LEFT: FORM -->
+    <div class="form-wrap">
+      <p class="eyebrow">Get in Touch</p>
       <h2>contact us</h2>
+      <p class="intro">Fill out the form below and a member of our team will reach out to you shortly to discuss your goals and answer any questions.</p>
 
-      <form
-        name="contact"
-        method="POST"
-        action="https://formspree.io/f/YOUR_FORM_ID"
-        id="contactForm">
+      <!-- The form (Formspree — replace YOUR_FORM_ID) -->
+      <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
 
         <div class="form-row">
           <div class="form-group">
@@ -524,8 +567,8 @@
         </div>
 
         <div class="form-group">
-          <label for="email">Email *</label>
-          <input type="email" id="email" name="email" placeholder="Your email address" required />
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required />
         </div>
 
         <div class="form-group">
@@ -551,7 +594,6 @@
               <option>Injectables (BOTOX® / Fillers)</option>
               <option>Skin Treatments</option>
               <option>Microneedling / RF Microneedling</option>
-              <option>Laser Hair Removal</option>
               <option>Hormone Wellness</option>
               <option>Peptide Therapy</option>
               <option>Other / Not Sure</option>
@@ -564,49 +606,68 @@
           <textarea id="message" name="message" placeholder="Tell us how we can help you…"></textarea>
         </div>
 
-        <div class="form-submit">
-          <button type="submit" class="btn btn-teal">SUBMIT</button>
-        </div>
+        <button type="submit" class="btn-submit">SEND MESSAGE</button>
 
-        <!-- Success / error messages -->
-        <p id="form-success" style="display:none; margin-top:16px; color:var(--teal); font-size:13px; font-weight:600; letter-spacing:1px;">
-          ✓ Thank you! We'll be in touch shortly.
-        </p>
-        <p id="form-error" style="display:none; margin-top:16px; color:#c0392b; font-size:13px;">
-          Something went wrong. Please try calling us at <a href="tel:4706104550">(470) 610-4550</a>.
-        </p>
       </form>
+
+      <!-- Thank you message (shown on submit) -->
+      <div class="thank-you" id="thankYou">
+        <div class="checkmark">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3>Thank you!</h3>
+        <p>We've received your message and will be in touch shortly. We look forward to helping you on your wellness journey.</p>
+      </div>
     </div>
 
-    <!-- RIGHT: Info + map -->
-    <div class="contact-info-wrap">
+    <!-- RIGHT: INFO PANEL -->
+    <div class="info-panel">
+      <p class="panel-title">Our Information</p>
 
-      <!-- Embedded Google Map -->
-      <div class="contact-map">
+      <div class="info-map">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3308.5!2d-84.2977!3d34.0754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f571279bd38099%3A0x8aaaf6c477bb84!2s3450%20Old%20Milton%20Pkwy%20%23100%2C%20Alpharetta%2C%20GA%2030005!5e0!3m2!1sen!2sus!4v1"
-          title="Alpha Aesthetics And Health location"
-          allowfullscreen=""
-          loading="lazy"
+          title="Alpha Aesthetics location"
+          allowfullscreen="" loading="lazy"
           referrerpolicy="no-referrer-when-downgrade">
         </iframe>
       </div>
 
       <div class="info-block">
         <div class="info-label">Address</div>
-        <h5>Alpha Aesthetics And Health</h5>
-        <p>3450 Old Milton Parkway</p>
-        <p>Alpharetta, GA 30005</p>
+        <div class="info-icon-row">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="info-text">
+            <h5>Alpha Aesthetics And Health</h5>
+            <p>3450 Old Milton Parkway<br/>Alpharetta, GA 30005</p>
+          </div>
+        </div>
       </div>
 
       <div class="info-block">
         <div class="info-label">Phone</div>
-        <h5><a href="tel:4706104550">(470) 610-4550</a></h5>
+        <div class="info-icon-row">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.92 16z"/></svg>
+          </div>
+          <div class="info-text">
+            <h5><a href="tel:4706104550">(470) 610-4550</a></h5>
+          </div>
+        </div>
       </div>
 
       <div class="info-block">
         <div class="info-label">Email</div>
-        <h5><a href="mailto:info@alphaaesthetichealth.com">info@alphaaesthetichealth.com</a></h5>
+        <div class="info-icon-row">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="info-text">
+            <h5><a href="mailto:info@alphaaesthetichealth.com">info@alphaaesthetichealth.com</a></h5>
+          </div>
+        </div>
       </div>
 
       <div class="info-block">
@@ -624,7 +685,7 @@
 
       <div class="info-block">
         <div class="info-label">Follow Us</div>
-        <div class="social-links">
+        <div class="social-row">
           <a href="https://www.facebook.com/profile.php?id=61555865313019" target="_blank" rel="noopener" aria-label="Facebook">
             <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
           </a>
@@ -651,7 +712,7 @@
   <div class="footer-grid">
     <div>
       <img src="images/logoblackandwhite.png" alt="Alpha Aesthetics Logo"
-        style="height:80px; margin-bottom:16px; filter:brightness(10);"
+        style="height:80px; margin-bottom:16px;"
         onerror="this.style.display='none'" />
       <p>3450 Old Milton Parkway<br/>Alpharetta, GA 30005</p>
       <p style="margin-top:10px;"><a href="tel:4706104550">(470) 610-4550</a></p>
@@ -676,7 +737,6 @@
       <h4>QUICK LINKS</h4>
       <p><a href="index.html">Home</a></p>
       <p><a href="contact.html">Contact Us</a></p>
-      <p><a href="https://mymentorbrandon.github.io/alpha-aesthetics/schedule-appointment.html">Schedule Appointment</a></p>
       <p><a href="#">Privacy &amp; Disclaimer</a></p>
     </div>
     <div>
@@ -707,28 +767,25 @@
 <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
 <script>
   // International phone input
-  const phoneInput = document.querySelector("#phone");
-  const iti = window.intlTelInput(phoneInput, {
-    initialCountry: "us",
-    preferredCountries: ["us", "gb", "ca", "au", "za"],
+  const phoneInput = document.querySelector('#phone');
+  window.intlTelInput(phoneInput, {
+    initialCountry: 'us',
+    preferredCountries: ['us', 'gb', 'ca', 'au', 'za'],
     separateDialCode: true,
-    utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js"
+    utilsScript: 'https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js'
   });
 
-  // Mobile menu close on ESC
+  // Mobile menu — close on ESC
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') document.getElementById('mobileMenu').classList.remove('open');
   });
 
-  // Form submission via Formspree (or swap for your own backend)
+  // Form submission
   const form = document.getElementById('contactForm');
+  const thankYou = document.getElementById('thankYou');
+
   form.addEventListener('submit', async function(e) {
     e.preventDefault();
-    const success = document.getElementById('form-success');
-    const error = document.getElementById('form-error');
-    success.style.display = 'none';
-    error.style.display = 'none';
-
     try {
       const res = await fetch(form.action, {
         method: 'POST',
@@ -736,13 +793,14 @@
         headers: { 'Accept': 'application/json' }
       });
       if (res.ok) {
-        success.style.display = 'block';
-        form.reset();
+        form.style.display = 'none';
+        thankYou.style.display = 'block';
+        window.scrollTo({ top: thankYou.offsetTop - 100, behavior: 'smooth' });
       } else {
-        error.style.display = 'block';
+        alert('Something went wrong. Please call us at (470) 610-4550.');
       }
     } catch {
-      error.style.display = 'block';
+      alert('Something went wrong. Please call us at (470) 610-4550.');
     }
   });
 </script>
