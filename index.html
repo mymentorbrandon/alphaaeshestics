@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alpharetta, GA Med Spa | Alpha Aesthetics & Health</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ── VARIABLES ── */
+    :root {
+      --teal: #4a8fa0;
+      --teal-dark: #3a7080;
+      --gray: #8a8a8a;
+      --light: #f7f5f3;
+      --white: #ffffff;
+      --text: #333;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Montserrat', sans-serif; color: var(--text); background: var(--white); }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    /* ── TOP BANNER ── */
+    .top-banner {
+      background: var(--teal);
+      color: var(--white);
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+    .top-banner a {
+      display: inline-block;
+      margin-left: 16px;
+      background: var(--white);
+      color: var(--teal);
+      padding: 5px 16px;
+      border-radius: 2px;
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 5%;
+      background: var(--white);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .logo { height: 70px; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a {
+      font-size: 12px; letter-spacing: 2px; font-weight: 600;
+      color: var(--gray); transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--teal); }
+    .nav-cta {
+      background: var(--teal);
+      color: var(--white) !important;
+      padding: 10px 20px;
+      border-radius: 2px;
+      letter-spacing: 1.5px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: url('https://assets.cdn.filesafe.space/aAdYcGX60HqZV83oFzoF/media/507b71a7-8e86-43db-af36-266b4dbc7eb2.jpeg') center/cover no-repeat;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      padding: 0 8%;
+    }
+    .hero-content { max-width: 560px; }
+    .hero-content h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(42px, 6vw, 78px);
+      color: var(--white);
+      line-height: 1.1;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    }
+    .hero-content p {
+      color: rgba(255,255,255,0.88);
+      font-size: 13px;
+      letter-spacing: 2.5px;
+      margin: 16px 0 32px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      font-size: 12px;
+      letter-spacing: 2px;
+      font-weight: 700;
+      border-radius: 2px;
+      transition: background .2s;
+    }
+    .btn-white { background: var(--white); color: var(--teal); }
+    .btn-white:hover { background: var(--light); }
+    .btn-teal { background: var(--teal); color: var(--white); }
+    .btn-teal:hover { background: var(--teal-dark); }
+
+    /* ── SECTION COMMONS ── */
+    section { padding: 80px 8%; }
+    .section-label {
+      font-size: 11px; letter-spacing: 4px; color: var(--teal);
+      text-transform: uppercase; margin-bottom: 10px;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(28px, 4vw, 46px);
+      color: var(--teal-dark);
+      margin-bottom: 24px;
+    }
+
+    /* ── ABOUT ── */
+    .about { background: var(--light); }
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .about p { font-size: 14px; line-height: 1.9; color: #555; margin-bottom: 16px; }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials { background: var(--white); text-align: center; }
+    .testimonials-scroll {
+      display: flex; gap: 16px; overflow-x: auto;
+      padding: 20px 0; justify-content: center; flex-wrap: wrap;
+    }
+    .testimonial-card {
+      background: var(--light);
+      border-left: 3px solid var(--teal);
+      padding: 24px;
+      width: 280px;
+      text-align: left;
+      flex-shrink: 0;
+      border-radius: 2px;
+    }
+    .testimonial-card .stars { color: #f0b429; font-size: 14px; margin-bottom: 10px; }
+    .testimonial-card p { font-size: 13px; line-height: 1.7; color: #555; }
+    .testimonial-card .author { font-size: 12px; font-weight: 700; margin-top: 12px; color: var(--teal); }
+
+    /* ── SERVICES ── */
+    .services { background: var(--light); text-align: center; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .service-card { position: relative; border-radius: 4px; overflow: hidden; cursor: pointer; }
+    .service-card img { width: 100%; height: 220px; object-fit: cover; transition: transform .4s; }
+    .service-card:hover img { transform: scale(1.05); }
+    .service-card .label {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: rgba(74,143,160,0.88);
+      color: var(--white);
+      font-size: 11px; letter-spacing: 3px; font-weight: 700;
+      padding: 14px; text-align: center;
+    }
+
+    /* ── TECHNOLOGIES ── */
+    .tech { background: var(--teal-dark); color: var(--white); text-align: center; }
+    .tech .section-title { color: var(--white); }
+    .tech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
+    .tech-card {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 36px 24px;
+      border-radius: 4px;
+    }
+    .tech-card h3 { font-size: 16px; letter-spacing: 3px; margin-bottom: 12px; }
+    .tech-card p { font-size: 13px; color: rgba(255,255,255,0.8); line-height: 1.8; }
+
+    /* ── PROVIDER ── */
+    .provider { background: var(--white); }
+    .provider-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px; align-items: center; }
+    .provider img { border-radius: 4px; width: 100%; max-height: 500px; object-fit: cover; }
+    .provider p { font-size: 13px; line-height: 1.9; color: #555; margin-bottom: 14px; letter-spacing: 0.5px; }
+    .provider h2 { font-size: 13px; letter-spacing: 3px; color: var(--teal); margin-bottom: 6px; font-weight: 700; }
+    .provider h3 { font-family: 'Cormorant Garamond', serif; font-size: 36px; color: var(--teal-dark); margin-bottom: 20px; }
+
+    /* ── FAQ ── */
+    .faq { background: var(--light); }
+    details {
+      border-bottom: 1px solid #ddd;
+      padding: 18px 0;
+    }
+    summary {
+      font-size: 14px; font-weight: 600; cursor: pointer;
+      list-style: none; display: flex; justify-content: space-between;
+      color: var(--teal-dark);
+    }
+    summary::after { content: '+'; font-size: 20px; color: var(--teal); }
+    details[open] summary::after { content: '−'; }
+    details p { font-size: 13px; line-height: 1.8; color: #555; margin-top: 12px; }
+    .faq-section-title { font-size: 14px; letter-spacing: 2px; font-weight: 700; color: var(--teal); margin: 36px 0 8px; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #2a2a2a;
+      color: rgba(255,255,255,0.7);
+      padding: 50px 8% 30px;
+    }
+    .footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+    footer h4 { color: var(--white); font-size: 12px; letter-spacing: 3px; margin-bottom: 16px; }
+    footer p, footer a { font-size: 13px; line-height: 1.8; color: rgba(255,255,255,0.65); }
+    footer a:hover { color: var(--teal); }
+    .social-links { display: flex; gap: 16px; margin-top: 12px; }
+    .social-links a {
+      width: 36px; height: 36px; border: 1px solid rgba(255,255,255,0.2);
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 50%; font-size: 14px; color: var(--white);
+      transition: background .2s;
+    }
+    .social-links a:hover { background: var(--teal); border-color: var(--teal); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 20px;
+      font-size: 12px;
+      text-align: center;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .about-inner, .provider-inner, .tech-grid, .footer-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .hero { min-height: 60vh; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BANNER -->
+<div class="top-banner">
+  Receive 20% off your first treatment!
+  <a href="https://alphaaesthetichealth.com/schedule-appointment">SCHEDULE NOW</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <img class="logo" src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/aAdYcGX60HqZV83oFzoF/media/fbb10623-8998-4c02-8a95-61523165f6f6.png" alt="Alpha Aesthetics Logo" />
+  <ul class="nav-links">
+    <li><a href="#">HOME</a></li>
+    <li><a href="#">CONTACT</a></li>
+    <li><a href="#" class="nav-cta">SCHEDULE APPOINTMENT</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>AESTHETIC &<br>HEALTHCARE NEEDS</h1>
+    <p>A ONE-STOP SHOP FOR ALL YOUR AESTHETIC & HEALTHCARE NEEDS</p>
+    <a href="#" class="btn btn-white">SCHEDULE APPOINTMENT</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="about-inner">
+    <div>
+      <p class="section-label">PREMIER MED SPA IN ALPHARETTA, GA</p>
+      <h2 class="section-title">Elevating the Art of Aesthetic Care</h2>
+      <p>Located in the heart of Alpharetta, GA, Alpha Aesthetics and Health is your premier destination for exceptional aesthetic and wellness services. Our practice is dedicated to enhancing your natural beauty and supporting your overall well-being.</p>
+      <p>At Alpha Aesthetics and Health, we offer a comprehensive range of treatments tailored to meet your unique needs. Our team is committed to delivering personalized care, utilizing state-of-the-art techniques and cutting-edge equipment to ensure outstanding results.</p>
+      <a href="#" class="btn btn-teal" style="margin-top:10px;">ABOUT US</a>
+    </div>
+    <img src="https://assets.cdn.filesafe.space/aAdYcGX60HqZV83oFzoF/media/2b7cdb22-9a3f-4448-8103-7b274c076bb1.png" alt="Alpha Aesthetics interior" style="border-radius:4px;" />
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <p class="section-label">HEAR FROM OTHERS</p>
+  <h2 class="section-title">Patient Testimonials</h2>
+  <div class="testimonials-scroll">
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p>"The staff was absolutely amazing. I felt so comfortable and my results were beyond what I expected."</p>
+      <div class="author">— Google Review</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p>"Kiran is incredibly knowledgeable and makes you feel at ease. Best med spa in Alpharetta!"</p>
+      <div class="author">— Google Review</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p>"I've tried many places and this is by far the most professional and results-driven spa I've visited."</p>
+      <div class="author">— Google Review</div>
+    </div>
+  </div>
+  <a href="#" class="btn btn-teal" style="margin-top:20px;">ALL REVIEWS</a>
+</section>
+
+<!-- SERVICES -->
+<section class="services">
+  <p class="section-label">TO HELP YOU LOOK AND FEEL YOUR BEST</p>
+  <h2 class="section-title">Personalized Services</h2>
+  <p style="max-width:700px;margin:0 auto;font-size:13px;line-height:1.9;color:#555;">Find your path to aesthetic excellence at Alpha Aesthetics And Health. Our skilled staff delivers advanced beauty and wellness solutions designed to rejuvenate your looks and boost your confidence.</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/aAdYcGX60HqZV83oFzoF/media/274adcfd-b6e5-4e85-aaf9-6049af79e35d.jpeg" alt="Alternative Therapies" />
+      <div class="label">ALTERNATIVE THERAPIES</div>
+    </div>
+    <div class="service-card">
+      <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/aAdYcGX60HqZV83oFzoF/media/954b9846-e429-47cf-a2e6-60f5430b50ff.jpeg" alt="Medical Weight Loss" />
+      <div class="label">MEDICAL WEIGHT LOSS</div>
+    </div>
+    <div class="service-card">
+      <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/aAdYcGX60HqZV83oFzoF/media/fe837316-b696-4c2e-8181-9290b4b3bfff.jpeg" alt="Injectables" />
+      <div class="label">INJECTABLES</div>
+    </div>
+    <div class="service-card">
+      <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/aAdYcGX60HqZV83oFzoF/media/68206827-3d06-4527-9b4b-117c40fa9ea2.jpeg" alt="Skin" />
+      <div class="label">SKIN</div>
+    </div>
+    <div class="service-card">
+      <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/aAdYcGX60HqZV83oFzoF/media/4b9e73fe-a445-48ff-bff7-5126022ab950.jpeg" alt="All Services" />
+      <div class="label">ALL SERVICES</div>
+    </div>
+  </div>
+</section>
+
+<!-- TECHNOLOGIES -->
+<section class="tech">
+  <p class="section-label" style="color:rgba(255,255,255,0.6);">EXPLORE OUR ADVANCED</p>
+  <h2 class="section-title">Technologies</h2>
+  <div class="tech-grid">
+    <div class="tech-card">
+      <h3>CARTESSA™ VIRTUE RF</h3>
+      <p>Advanced radiofrequency microneedling for skin tightening, texture improvement, and collagen stimulation with minimal downtime.</p>
+    </div>
+    <div class="tech-card">
+      <h3>CARTESSA PHYSIQ</h3>
+      <p>Non-invasive body contouring technology that targets stubborn fat and tones muscle using STEP technology.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROVIDER -->
+<section class="provider">
+  <div class="provider-inner">
+    <img src="https://assets.cdn.filesafe.space/aAdYcGX60HqZV83oFzoF/media/a29439e8-9627-44a2-bded-627eb5d01fa9.jpeg" alt="Kiran Shabbir FNP-C" />
+    <div>
+      <h2>MEET YOUR PROVIDER</h2>
+      <h3>Kiran Shabbir, FNP-C</h3>
+      <p>Kiran Shabbir is an aesthetic provider specializing in weight loss, Botox, filler injectables, PRP, and microneedling. She earned her Bachelor's degree from Emory University's Nell Hodgson Woodruff School of Nursing, and her Master's in Family Nurse Practitioner from Georgia Baptist College of Nursing.</p>
+      <p>Kiran loves helping clients feel more confident and beautiful. Her approach emphasizes personalized care, focusing on natural-looking results with Botox and fillers while offering innovative treatments like PRP for skin rejuvenation.</p>
+      <p>Passionate about staying up-to-date with the latest techniques and skincare products, Kiran cherishes spending time with family and friends, trying new restaurants, and traveling outside of work.</p>
+      <a href="#" class="btn btn-teal">LEARN MORE</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <p class="section-label">FREQUENTLY ASKED QUESTIONS</p>
+  <h2 class="section-title">Alpha Aesthetics & Health</h2>
+
+  <div class="faq-section-title">GENERAL</div>
+  <details><summary>Where is Alpha Aesthetics & Health located?</summary><p>We're located at 3450 Old Milton Parkway, Alpharetta, GA 30005.</p></details>
+  <details><summary>What are your office hours?</summary><p>Monday–Friday from 9:00 AM to 5:00 PM. Saturdays are by appointment only.</p></details>
+  <details><summary>How do I schedule an appointment?</summary><p>You can schedule online using the "Schedule Now" button or by calling us at 470-610-4550.</p></details>
+  <details><summary>Do you offer financing options?</summary><p>Yes! We accept CareCredit to help make treatments more affordable. Approval is subject to credit check.</p></details>
+  <details><summary>Do you accept insurance?</summary><p>We do not bill insurance. However, we provide receipts you can submit for potential reimbursement if your plan allows.</p></details>
+
+  <div class="faq-section-title">TREATMENTS</div>
+  <details><summary>What services do you offer?</summary><p>We offer medical weight loss (including peptide therapy), skin treatments (facials, microneedling, chemical peels), and injectables (BOTOX®, JUVÉDERM®, and more).</p></details>
+  <details><summary>Is there a consultation before treatment?</summary><p>Yes, every new patient receives a thorough consultation to assess your goals and create a customized treatment plan.</p></details>
+  <details><summary>Do you offer treatments for men?</summary><p>Absolutely! Our services, including hormone therapy, weight loss, and skin care, are designed for both women and men.</p></details>
+  <details><summary>Will I need downtime after treatment?</summary><p>Most of our services are minimally invasive with little to no downtime. We'll guide you through what to expect for each treatment.</p></details>
+
+  <div class="faq-section-title">INJECTABLES</div>
+  <details><summary>What's the difference between BOTOX® and fillers?</summary><p>BOTOX® relaxes muscles to reduce wrinkles, while fillers add volume to smooth and sculpt the face.</p></details>
+  <details><summary>Are your injectables FDA-approved?</summary><p>Yes, we only use FDA-approved brands like BOTOX®, JUVÉDERM®, RADIESSE®, and more.</p></details>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h4>ALPHA AESTHETICS & HEALTH</h4>
+      <p>3450 Old Milton Parkway<br>Alpharetta, GA 30005</p>
+      <p style="margin-top:10px;"><a href="tel:4706104550">(470) 610-4550</a></p>
+      <div class="social-links">
+        <a href="https://www.facebook.com/profile.php?id=61555865313019" title="Facebook">f</a>
+        <a href="https://www.instagram.com/alphaaestheticshealth/" title="Instagram">in</a>
+        <a href="https://maps.app.goo.gl/EPQrHrrZsG3oUBD18" title="Google">G</a>
+      </div>
+    </div>
+    <div>
+      <h4>HOURS</h4>
+      <p>Monday – Friday: 9:00 AM – 5:00 PM</p>
+      <p>Saturday: By Appointment Only</p>
+      <p>Sunday: Closed</p>
+    </div>
+    <div>
+      <h4>QUICK LINKS</h4>
+      <p><a href="#">Home</a></p>
+      <p><a href="#">Contact Us</a></p>
+      <p><a href="#">Schedule Appointment</a></p>
+      <p><a href="#">Privacy & Disclaimer</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© Copyright 2026 Alpha Aesthetics And Health &nbsp;|&nbsp; <a href="#">Privacy & Disclaimer</a> &nbsp;|&nbsp; <a href="#">Sitemap</a></p>
+    <p style="margin-top:6px;font-size:11px;">Individual results are not guaranteed and may vary from person to person. Images may contain models.</p>
+  </div>
+</footer>
+
+</body>
+</html>
