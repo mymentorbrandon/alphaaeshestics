@@ -783,24 +783,29 @@
   const thankYou = document.getElementById('thankYou');
 
   form.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    try {
-      const res = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      });
-      if (res.ok) {
-        form.style.display = 'none';
-        thankYou.style.display = 'block';
-        window.scrollTo({ top: thankYou.offsetTop - 100, behavior: 'smooth' });
-      } else {
-        alert('Something went wrong. Please call us at (470) 610-4550.');
-      }
-    } catch {
-      alert('Something went wrong. Please call us at (470) 610-4550.');
-    }
-  });
+  e.preventDefault();
+  const data = {
+    firstName: document.getElementById('firstName').value,
+    lastName:  document.getElementById('lastName').value,
+    email:     document.getElementById('email').value,
+    phone:     document.getElementById('phone').value,
+    patientStatus: document.querySelector('input[name="patientStatus"]:checked')?.value || '',
+    service:   document.getElementById('service').value,
+    message:   document.getElementById('message').value
+  };
+
+  try {
+    await fetch('https://script.google.com/macros/s/AKfycbw_H2wy1AxY4KrG9SxLlvrLL22aqKmqpaZcLrRvndvMQMCWTg0p131sIDAbGn_pSpLl/exec', {
+      method: 'POST',
+      body: JSON.stringify(data)
+    });
+    form.style.display = 'none';
+    thankYou.style.display = 'block';
+    window.scrollTo({ top: thankYou.offsetTop - 100, behavior: 'smooth' });
+  } catch {
+    alert('Something went wrong. Please call us at (470) 610-4550.');
+  }
+});
 </script>
 
 </body>
