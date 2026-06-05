@@ -127,24 +127,31 @@
     }
     .about p { font-size: 14px; line-height: 1.9; color: #555; margin-bottom: 16px; }
 
-    /* ── TESTIMONIALS ── */
-    .testimonials { background: var(--white); text-align: center; }
-    .testimonials-scroll {
-      display: flex; gap: 16px; overflow-x: auto;
-      padding: 20px 0; justify-content: center; flex-wrap: wrap;
+    /* ── MISSION ── */
+    .mission { background: var(--light); }
+    .mission-pillars {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 32px;
+      margin-bottom: 36px;
     }
-    .testimonial-card {
-      background: var(--light);
+    .pillar {
+      flex: 1;
+      min-width: 220px;
+      background: var(--white);
       border-left: 3px solid var(--teal);
-      padding: 24px;
-      width: 280px;
-      text-align: left;
-      flex-shrink: 0;
+      padding: 20px 24px;
       border-radius: 2px;
     }
-    .testimonial-card .stars { color: #f0b429; font-size: 14px; margin-bottom: 10px; }
-    .testimonial-card p { font-size: 13px; line-height: 1.7; color: #555; }
-    .testimonial-card .author { font-size: 12px; font-weight: 700; margin-top: 12px; color: var(--teal); }
+    .pillar-label {
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--teal);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .pillar p { font-size: 13px; line-height: 1.8; color: #555; }
 
     /* ── SERVICES ── */
     .services { background: var(--light); text-align: center; }
@@ -165,63 +172,95 @@
       padding: 14px; text-align: center;
     }
 
-   /* ── TECHNOLOGIES ── */
-.tech {
-  background: linear-gradient(rgba(74,143,160,0.45), rgba(74,143,160,0.45)),
-              url('images/Beauty-technology.jpg') center/cover no-repeat fixed;
-  color: var(--white);
-  text-align: center;
-  padding: 80px 8%;
-}
-.tech .section-label { color: rgba(255,255,255,0.85); letter-spacing: 4px; font-size: 16px; }
-.tech .section-title {
-  color: var(--white);
-  font-size: clamp(36px, 5vw, 64px);
-  font-weight: 700;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-}
-.tech-grid {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  margin-top: 40px;
-}
-.tech-card {
-  background: rgba(20,30,40,0.85);
-  padding: 20px 60px;
-  border-radius: 2px;
-  width: 400px;
-  cursor: pointer;
-  transition: background .2s;
-}
-.tech-card:hover { background: rgba(20,30,40,1); }
-.tech-card h3 {
-  font-size: 13px;
-  letter-spacing: 3px;
-  font-weight: 700;
-  color: var(--white);
-}
-.tech-card p { display: none; }
+    /* ── TECHNOLOGIES ── */
+    .tech {
+      background: linear-gradient(rgba(74,143,160,0.45), rgba(74,143,160,0.45)),
+                  url('images/Beauty-technology.jpg') center/cover no-repeat fixed;
+      color: var(--white);
+      text-align: center;
+      padding: 80px 8%;
+    }
+    .tech .section-label { color: rgba(255,255,255,0.85); letter-spacing: 4px; font-size: 16px; }
+    .tech .section-title {
+      color: var(--white);
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+    .tech-grid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      margin-top: 40px;
+    }
+    .tech-card {
+      background: rgba(20,30,40,0.85);
+      padding: 20px 60px;
+      border-radius: 2px;
+      width: 400px;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .tech-card:hover { background: rgba(20,30,40,1); }
+    .tech-card h3 {
+      font-size: 13px;
+      letter-spacing: 3px;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .tech-card p { display: none; }
 
-/* ── PROVIDER ── */
-.provider { background: var(--white); padding: 80px 8%; }
-.provider-inner {
-  display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: 60px;
-  align-items: center;
-}
-.provider img {
-  border-radius: 4px;
-  width: 100%;
-  max-height: 500px;
-  object-fit: cover;
-}
-.provider h2 { font-size: 13px; letter-spacing: 3px; color: var(--teal); margin-bottom: 6px; font-weight: 700; }
-.provider h3 { font-family: 'Cormorant Garamond', serif; font-size: 36px; color: var(--teal-dark); margin-bottom: 20px; }
-.provider p { font-size: 13px; line-height: 1.9; color: #555; margin-bottom: 14px; }
+    /* ── PROVIDER TEAM ── */
+    .provider { background: var(--white); padding: 80px 8%; }
+    .team-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .team-card {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      height: 580px;
+      cursor: pointer;
+    }
+    .team-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 45%;
+      transition: transform .5s ease;
+    }
+    .team-card:hover img { transform: scale(1.04); }
+    .team-card-body {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 40px 28px 28px;
+      background: linear-gradient(to top, rgba(20,40,50,0.95) 0%, rgba(20,40,50,0.7) 60%, transparent 100%);
+    }
+    .team-card-body h2 {
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: rgba(255,255,255,0.7);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .team-card-body h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .team-card-body p {
+      font-size: 12px;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.82);
+      margin-bottom: 18px;
+    }
 
     /* ── FAQ ── */
     .faq { background: var(--light); }
@@ -267,9 +306,11 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
-      .about-inner, .provider-inner, .tech-grid, .footer-grid { grid-template-columns: 1fr; }
+      .about-inner, .team-grid, .footer-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
       .hero { min-height: 60vh; }
+      .tech-card { width: 90%; padding: 20px 30px; }
+      .mission-pillars { flex-direction: column; }
     }
   </style>
 </head>
@@ -314,35 +355,51 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section class="testimonials">
-  <p class="section-label">HEAR FROM OTHERS</p>
-  <h2 class="section-title">Patient Testimonials</h2>
-  <div class="testimonials-scroll">
-    <div class="testimonial-card">
-      <div class="stars">★★★★★</div>
-      <p>"The staff was absolutely amazing. I felt so comfortable and my results were beyond what I expected."</p>
-      <div class="author">— Google Review</div>
+<!-- MISSION STATEMENT -->
+<section class="mission">
+  <p class="section-label">OUR STORY & MISSION</p>
+  <h2 class="section-title">Built on Trust. Rooted in Real Health.</h2>
+
+  <div style="max-width: 820px;">
+    <p style="font-size:14px; line-height:1.9; color:#555; margin-bottom:16px;">
+      Alpha Aesthetics & Health was born from a deeply personal journey. Our founder — a lifelong health advocate who dedicated himself to natural wellness — learned firsthand the real dangers of off-brand peptides and unregulated products flooding the market. After suffering injury from products that simply couldn't be trusted, he made a decision: build a place the Alpharetta community could count on completely.
+    </p>
+    <p style="font-size:14px; line-height:1.9; color:#555; margin-bottom:16px;">
+      Every product we use is sourced exclusively from trusted, American-based suppliers. No shortcuts. No compromises. Just clean, proven treatments administered by qualified professionals who genuinely care about your outcome.
+    </p>
+    <p style="font-size:14px; line-height:1.9; color:#555; margin-bottom:8px;">
+      That commitment to integrity is why we proudly partner with
+      <a href="https://alwaysingoodhealth.com" target="_blank" rel="noopener"
+         style="color:var(--teal); font-weight:700; text-decoration:underline;">
+        Always In Good Health
+      </a>
+      — a trusted 26-year family practice specializing in regenerative medicine, joint pain relief, and chronic pain management. Together, we offer our patients a full continuum of care they can rely on — from advanced aesthetics to deep regenerative healing.
+    </p>
+  </div>
+
+  <div class="mission-pillars">
+    <div class="pillar">
+      <p class="pillar-label">OUR STANDARD</p>
+      <p>100% American-sourced products — vetted, regulated, and held to the highest standards of safety and efficacy.</p>
     </div>
-    <div class="testimonial-card">
-      <div class="stars">★★★★★</div>
-      <p>"Dr. Heisser is incredibly knowledgeable and makes you feel at ease. Best med spa in Alpharetta!"</p>
-      <div class="author">— Google Review</div>
+    <div class="pillar">
+      <p class="pillar-label">OUR PARTNERSHIP</p>
+      <p>26 years of family practice expertise combined with cutting-edge regenerative and aesthetic medicine.</p>
     </div>
-    <div class="testimonial-card">
-      <div class="stars">★★★★★</div>
-      <p>"I've tried many places and this is by far the most professional and results-driven spa I've visited."</p>
-      <div class="author">— Google Review</div>
+    <div class="pillar">
+      <p class="pillar-label">OUR COMMUNITY</p>
+      <p>Rooted in Alpharetta, GA — dedicated to being the practice neighbors recommend to neighbors.</p>
     </div>
   </div>
-  <a href="#" class="btn btn-teal" style="margin-top:20px;">ALL REVIEWS</a>
+
+  <a href="contact.html" class="btn btn-teal">START YOUR JOURNEY</a>
 </section>
 
 <!-- SERVICES -->
 <section class="services">
   <p class="section-label">TO HELP YOU LOOK AND FEEL YOUR BEST</p>
   <h2 class="section-title">Personalized Services</h2>
-  <p style="max-width:700px;margin:0 auto;font-size:13px;line-height:1.9;color:#555;">Find your path to aesthetic excellence at Alpha Aesthetics And Health. Our skilled staff delivers advanced beauty and wellness solutions designed to rejuvenate your looks and boost your confidence. Offering cutting-edge services, such as cosmetic injections, weight loss therapies, and various laser treatments like skin tightening, laser hair removal, and RF microneedling, we tailor every treatment to your specific desires and needs. Browse our comprehensive list of services, and contact us to begin your transformation toward a more radiant and confident you.</p>
+  <p style="max-width:700px;margin:0 auto;font-size:13px;line-height:1.9;color:#555;">Find your path to aesthetic excellence at Alpha Aesthetics And Health. Our skilled staff delivers advanced beauty and wellness solutions designed to rejuvenate your looks and boost your confidence. Offering cutting-edge services, such as cosmetic injections, weight loss therapies, and various laser treatments like skin tightening, laser hair removal, and RF microneedling, we tailor every treatment to your specific desires and needs.</p>
   <div class="services-grid">
     <div class="service-card">
       <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/aAdYcGX60HqZV83oFzoF/media/274adcfd-b6e5-4e85-aaf9-6049af79e35d.jpeg" alt="Alternative Therapies" />
@@ -374,32 +431,47 @@
   <div class="tech-grid">
     <div class="tech-card">
       <h3>CARTESSA™ VIRTUE RF</h3>
-      <p>Advanced radiofrequency microneedling for skin tightening, texture improvement, and collagen stimulation with minimal downtime.</p>
     </div>
     <div class="tech-card">
       <h3>CARTESSA PHYSIQ</h3>
-      <p>Non-invasive body contouring technology that targets stubborn fat and tones muscle using STEP technology.</p>
     </div>
   </div>
 </section>
 
-<!-- MEDICAL DIRECTOR -->
+<!-- MEDICAL TEAM -->
 <section class="provider">
-  <div class="provider-inner">
-  <div>
-    <h2>MEET THE MEDICAL DIRECTOR</h2>
-    <h3>Dr. Randy Heisser, MD</h3>
-    <img src="images/randyheisser.jpg" alt="Dr. Randy Heisser, MD" />
+  <p class="section-label" style="text-align:center; margin-bottom:8px;">MEET THE TEAM</p>
+  <h2 class="section-title" style="text-align:center; margin-bottom:40px;">Our Providers</h2>
+
+  <div class="team-grid">
+
+    <!-- Dr. Randy Heisser -->
+    <div class="team-card">
+      <img src="images/randyheisser.jpg" alt="Dr. Randy Heisser, MD" />
+      <div class="team-card-body">
+        <h2>MEDICAL DIRECTOR</h2>
+        <h3>Dr. Randy Heisser, MD</h3>
+        <p>Board-Certified Family Medicine physician specializing in regenerative and anti-aging medicine. With decades of clinical experience, Dr. Heisser leads our practice with a patient-first philosophy rooted in umbilical cord-derived cell therapy, peptide protocols, and hormone optimization.</p>
+        <a href="https://drrandyheissermd.com/" target="_blank" class="btn btn-teal" style="font-size:11px;">
+          Visit Dr. Heisser's Website
+        </a>
+      </div>
+    </div>
+
+    <!-- Dr. Laurie Davis NP -->
+    <div class="team-card">
+      <img src="images/lauriedavis.jpg" alt="Dr. Laurie Davis, NP" />
+      <div class="team-card-body">
+        <h2>NURSE PRACTITIONER</h2>
+        <h3>Dr. Laurie Davis, NP</h3>
+        <p>A dedicated nurse practitioner bringing expertise in aesthetic and regenerative care to Alpha Aesthetics & Health. Dr. Davis combines clinical precision with a compassionate approach, ensuring every patient feels heard, safe, and confident in their treatment plan.</p>
+        <a href="https://drdavisnp.com/" target="_blank" class="btn btn-teal" style="font-size:11px;">
+          Visit Dr. Davis's Website
+        </a>
+      </div>
+    </div>
+
   </div>
-  <div>
-    <p>Dr. Randy Heisser is a Board-Certified Family Medicine physician and Medical Director specializing in regenerative and anti-aging medicine. Born and raised in Louisiana and trained at LSU, Dr. Heisser brings decades of clinical experience and a personal, patient-first approach to every treatment.</p>
-    <p>His expertise includes umbilical cord-derived cell therapy, peptide protocols, hormone optimization, and longevity care — making him a trusted authority in the field of regenerative aesthetics and health.</p>
-    <p>"My goal has always been simple: help patients feel like the best version of themselves for as long as possible."</p>
-    <a href="https://drrandyheissermd.com/" target="_blank" class="btn btn-teal">
-      Visit Dr. Heisser's Website
-    </a>
-  </div>
-</div>
 </section>
 
 <!-- FAQ -->
@@ -433,16 +505,16 @@
       <p>3450 Old Milton Parkway<br>Alpharetta, GA 30005</p>
       <p style="margin-top:10px;"><a href="tel:4706104550">(470) 610-4550</a></p>
       <div class="social-links">
-  <a href="https://www.facebook.com/profile.php?id=61555865313019" target="_blank" rel="noopener" aria-label="Facebook">
-    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-  </a>
-  <a href="https://www.instagram.com/alphaaestheticshealth/" target="_blank" rel="noopener" aria-label="Instagram">
-    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-  </a>
-  <a href="https://maps.app.goo.gl/EPQrHrrZsG3oUBD18" target="_blank" rel="noopener" aria-label="Google">
-    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-  </a>
-</div>
+        <a href="https://www.facebook.com/profile.php?id=61555865313019" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/alphaaestheticshealth/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://maps.app.goo.gl/EPQrHrrZsG3oUBD18" target="_blank" rel="noopener" aria-label="Google">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        </a>
+      </div>
     </div>
     <div>
       <h4>HOURS</h4>
@@ -480,3 +552,6 @@
     <p style="margin-top:6px;font-size:11px;">Individual results are not guaranteed and may vary from person to person. Images may contain models.</p>
   </div>
 </footer>
+
+</body>
+</html>
