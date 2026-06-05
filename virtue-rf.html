@@ -12,7 +12,7 @@
   <meta name="author" content="Alpha Aesthetics & Health" />
   <link rel="canonical" href="https://mymentorbrandon.github.io/alpha-aesthetics/virtue-rf.html" />
 
-  <!-- ══ OPEN GRAPH / SOCIAL SEO ══ -->
+  <!-- ══ OPEN GRAPH ══ -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Cartessa™ Virtue RF Microneedling | Alpha Aesthetics & Health" />
   <meta property="og:description" content="Radiofrequency microneedling that tightens, resurfaces, and rejuvenates. Book your Virtue RF consultation at our Alpharetta, GA med spa today." />
@@ -26,7 +26,7 @@
   <meta name="twitter:description" content="Advanced RF microneedling for skin tightening, texture, and collagen rebuilding. Little to no downtime. Serving Alpharetta & North Atlanta." />
   <meta name="twitter:image" content="https://mymentorbrandon.github.io/alpha-aesthetics/images/Beauty-technology.jpg" />
 
-  <!-- ══ SCHEMA MARKUP (Local Business + Medical Procedure) ══ -->
+  <!-- ══ SCHEMA MARKUP ══ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -70,7 +70,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
   <style>
-    /* ══ VARIABLES (matches index.html exactly) ══ */
+    /* ══ VARIABLES ══ */
     :root {
       --teal: #4a8fa0;
       --teal-dark: #3a7080;
@@ -112,11 +112,19 @@
       padding: 16px 5%;
       background: var(--white);
       box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-      position: sticky; top: 0; z-index: 100;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
     .logo { height: 70px; }
     .nav-links { display: flex; gap: 28px; list-style: none; }
-    .nav-links a { font-size: 12px; letter-spacing: 2px; font-weight: 600; color: var(--gray); transition: color .2s; }
+    .nav-links a {
+      font-size: 12px;
+      letter-spacing: 2px;
+      font-weight: 600;
+      color: var(--gray);
+      transition: color .2s;
+    }
     .nav-links a:hover { color: var(--teal); }
     .nav-cta {
       background: var(--teal);
@@ -136,10 +144,16 @@
       display: flex;
       align-items: center;
       padding: 0 8%;
-      text-align: left;
     }
     .hero-inner { max-width: 680px; }
-    .hero-eyebrow { font-size: 11px; letter-spacing: 4px; color: rgba(255,255,255,0.75); font-weight: 600; text-transform: uppercase; margin-bottom: 18px; }
+    .hero-eyebrow {
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: rgba(255,255,255,0.75);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
     .hero h1 {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(44px, 6vw, 72px);
@@ -148,7 +162,13 @@
       margin-bottom: 22px;
     }
     .hero h1 span { color: #a8d8e2; }
-    .hero p { font-size: 14px; line-height: 1.9; color: rgba(255,255,255,0.85); max-width: 520px; margin-bottom: 34px; }
+    .hero p {
+      font-size: 14px;
+      line-height: 1.9;
+      color: rgba(255,255,255,0.85);
+      max-width: 520px;
+      margin-bottom: 34px;
+    }
     .btn-primary {
       display: inline-block;
       background: var(--teal);
@@ -171,18 +191,36 @@
       font-weight: 700;
       border-radius: 2px;
       margin-left: 14px;
-      transition: background .2s, border-color .2s;
+      transition: background .2s;
     }
     .btn-outline:hover { background: rgba(255,255,255,0.1); }
 
-    /* ══ SECTION SHARED ══ */
+    /* ══ SHARED SECTION STYLES ══ */
     section { padding: 80px 8%; }
-    .eyebrow { font-size: 11px; letter-spacing: 4px; font-weight: 700; color: var(--teal); text-transform: uppercase; margin-bottom: 10px; }
-    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 4vw, 52px); color: var(--teal-dark); margin-bottom: 22px; line-height: 1.2; }
-    .section-body { font-size: 13.5px; line-height: 1.9; color: #555; max-width: 720px; }
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 4px;
+      font-weight: 700;
+      color: var(--teal);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 4vw, 52px);
+      color: var(--teal-dark);
+      margin-bottom: 22px;
+      line-height: 1.2;
+    }
+    .section-body {
+      font-size: 13.5px;
+      line-height: 1.9;
+      color: #555;
+      max-width: 720px;
+    }
     .divider { width: 50px; height: 2px; background: var(--teal); margin: 18px 0 28px; }
 
-    /* ══ WHAT IS VIRTUE RF (two-column) ══ */
+    /* ══ WHAT IS VIRTUE RF ══ */
     .about-rf { background: var(--white); }
     .about-rf .inner {
       display: grid;
@@ -190,7 +228,12 @@
       gap: 64px;
       align-items: center;
     }
-    .about-rf img { border-radius: 4px; width: 100%; height: 480px; object-fit: cover; }
+    .about-rf img {
+      border-radius: 4px;
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+    }
 
     /* ══ STATS STRIP ══ */
     .stats-strip {
@@ -201,8 +244,20 @@
       gap: 20px;
       text-align: center;
     }
-    .stat-item .number { font-family: 'Cormorant Garamond', serif; font-size: 52px; color: var(--white); line-height: 1; }
-    .stat-item .label { font-size: 11px; letter-spacing: 2px; color: rgba(255,255,255,0.8); margin-top: 8px; text-transform: uppercase; font-weight: 600; }
+    .stat-item .number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 52px;
+      color: var(--white);
+      line-height: 1;
+    }
+    .stat-item .label {
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,0.8);
+      margin-top: 8px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
 
     /* ══ HOW IT WORKS ══ */
     .how-it-works { background: var(--light); }
@@ -219,8 +274,22 @@
       border-top: 3px solid var(--teal);
       box-shadow: 0 4px 20px rgba(0,0,0,0.05);
     }
-    .step-number { font-family: 'Cormorant Garamond', serif; font-size: 48px; color: var(--teal); opacity: 0.3; line-height: 1; margin-bottom: 14px; }
-    .step-card h3 { font-size: 12px; letter-spacing: 2px; font-weight: 700; color: var(--teal-dark); margin-bottom: 12px; text-transform: uppercase; }
+    .step-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      color: var(--teal);
+      opacity: 0.3;
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+    .step-card h3 {
+      font-size: 12px;
+      letter-spacing: 2px;
+      font-weight: 700;
+      color: var(--teal-dark);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
     .step-card p { font-size: 13px; line-height: 1.8; color: #555; }
 
     /* ══ BENEFITS ══ */
@@ -237,9 +306,19 @@
       background: var(--light);
       transition: transform .25s, box-shadow .25s;
     }
-    .benefit-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(74,143,160,0.12); }
+    .benefit-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(74,143,160,0.12);
+    }
     .benefit-icon { font-size: 28px; margin-bottom: 14px; }
-    .benefit-card h3 { font-size: 12px; letter-spacing: 2px; font-weight: 700; color: var(--teal-dark); margin-bottom: 10px; text-transform: uppercase; }
+    .benefit-card h3 {
+      font-size: 12px;
+      letter-spacing: 2px;
+      font-weight: 700;
+      color: var(--teal-dark);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
     .benefit-card p { font-size: 13px; line-height: 1.8; color: #555; }
 
     /* ══ TREATMENT AREAS ══ */
@@ -263,7 +342,7 @@
       text-transform: uppercase;
     }
 
-    /* ══ WHO IS A CANDIDATE ══ */
+    /* ══ CANDIDATE ══ */
     .candidate { background: var(--white); }
     .candidate .inner {
       display: grid;
@@ -282,7 +361,13 @@
       align-items: flex-start;
       gap: 10px;
     }
-    .candidate ul li::before { content: '✓'; color: var(--teal); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .candidate ul li::before {
+      content: '✓';
+      color: var(--teal);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
     .not-candidate ul li::before { content: '✕'; color: #c0767a; }
 
     /* ══ CTA BAND ══ */
@@ -293,8 +378,18 @@
       text-align: center;
       color: var(--white);
     }
-    .cta-band h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 4vw, 52px); margin-bottom: 16px; }
-    .cta-band p { font-size: 14px; line-height: 1.8; color: rgba(255,255,255,0.85); max-width: 580px; margin: 0 auto 36px; }
+    .cta-band h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 4vw, 52px);
+      margin-bottom: 16px;
+    }
+    .cta-band p {
+      font-size: 14px;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.85);
+      max-width: 580px;
+      margin: 0 auto 36px;
+    }
     .btn-white {
       display: inline-block;
       background: var(--white);
@@ -311,10 +406,7 @@
     /* ══ FAQ ══ */
     .faq-section { background: var(--light); }
     .faq-wrap { max-width: 820px; margin: 40px auto 0; }
-    details {
-      border-bottom: 1px solid #ddd;
-      padding: 4px 0;
-    }
+    details { border-bottom: 1px solid #ddd; padding: 4px 0; }
     summary {
       padding: 16px 0;
       font-size: 13px;
@@ -338,16 +430,26 @@
       color: rgba(255,255,255,0.7);
       padding: 50px 8% 30px;
     }
-    .footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
     footer h4 { color: var(--white); font-size: 12px; letter-spacing: 3px; margin-bottom: 16px; }
     footer p, footer a { font-size: 13px; line-height: 1.8; color: rgba(255,255,255,0.65); }
     footer a:hover { color: var(--teal); }
     .social-links { display: flex; gap: 16px; margin-top: 12px; }
     .social-links a {
-      width: 36px; height: 36px;
+      width: 36px;
+      height: 36px;
       border: 1px solid rgba(255,255,255,0.2);
-      display: flex; align-items: center; justify-content: center;
-      border-radius: 50%; font-size: 14px; color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 14px;
+      color: var(--white);
       transition: background .2s;
     }
     .social-links a:hover { background: var(--teal); border-color: var(--teal); }
@@ -361,12 +463,14 @@
 
     /* ══ RESPONSIVE ══ */
     @media (max-width: 768px) {
-      .about-rf .inner, .candidate .inner, .footer-grid { grid-template-columns: 1fr; }
+      .about-rf .inner,
+      .candidate .inner,
+      .footer-grid { grid-template-columns: 1fr; }
       .stats-strip { grid-template-columns: repeat(2, 1fr); }
       .nav-links { display: none; }
       .hero { min-height: 65vh; }
-      .hero .btn-outline { margin-left: 0; margin-top: 12px; display: block; text-align: center; width: fit-content; }
       .about-rf img { height: 300px; }
+      .btn-outline { margin-left: 0; margin-top: 12px; display: block; width: fit-content; }
     }
   </style>
 </head>
@@ -395,7 +499,7 @@
   <header class="hero">
     <div class="hero-inner">
       <p class="hero-eyebrow">Advanced Technology at Alpha Aesthetics</p>
-      <h1>Cartessa™ <span>Virtue RF</span><br>Microneedling</h1>
+      <h1>Cartessa™ <span>Virtue RF</span><br />Microneedling</h1>
       <p>
         Experience the gold standard in radiofrequency microneedling — clinically proven to tighten skin, reduce fine lines and wrinkles, minimize pores, and rebuild collagen from the inside out. All with minimal downtime.
       </p>
@@ -512,12 +616,12 @@
       <div class="benefit-card">
         <div class="benefit-icon">✦</div>
         <h3>Safe for All Skin Tones</h3>
-        <p>Because the RF energy bypasses the epidermis and targets the dermis directly, the Virtue RF carries a low risk of post-inflammatory hyperpigmentation and is suitable for all Fitzpatrick skin types.</p>
+        <p>Because RF energy targets the dermis directly, Virtue RF carries a low risk of post-inflammatory hyperpigmentation and is suitable for all Fitzpatrick skin types I–VI.</p>
       </div>
       <div class="benefit-card">
         <div class="benefit-icon">✦</div>
         <h3>Minimal Downtime</h3>
-        <p>Most patients return to normal activities within 24–48 hours. There is no extended peeling, no risk of burns, and no prolonged social downtime associated with ablative lasers.</p>
+        <p>Most patients return to normal activities within 24–48 hours — no extended peeling, no burns, and none of the prolonged social downtime of ablative lasers.</p>
       </div>
     </div>
   </section>
@@ -546,7 +650,7 @@
     </div>
   </section>
 
-  <!-- ══ WHO IS A CANDIDATE ══ -->
+  <!-- ══ IDEAL CANDIDATES ══ -->
   <section class="candidate">
     <p class="eyebrow">Is It Right For You?</p>
     <h2 class="section-title">Ideal Candidates &amp; Considerations</h2>
@@ -561,7 +665,7 @@
           <li>Atrophic acne scars or surgical scars</li>
           <li>Sun damage or rough, dull skin tone</li>
           <li>Stretch marks on the body</li>
-          <li>Any skin tone or Fitzpatrick type I–VI</li>
+          <li>Any skin tone — Fitzpatrick types I–VI</li>
           <li>Adults seeking non-surgical skin rejuvenation</li>
         </ul>
       </div>
@@ -601,42 +705,42 @@
 
       <details>
         <summary>How many Virtue RF treatments will I need?</summary>
-        <p>Most patients achieve optimal results with a series of 3–4 treatments spaced 4–6 weeks apart. However, some patients see significant improvement after just one session. Your provider will recommend the ideal number of sessions based on your individual skin concerns and goals.</p>
+        <p>Most patients achieve optimal results with a series of 3–4 treatments spaced 4–6 weeks apart. However, some patients see significant improvement after just one session. Your provider will recommend the ideal number based on your individual skin concerns and goals.</p>
       </details>
 
       <details>
         <summary>Does the Virtue RF treatment hurt?</summary>
-        <p>Topical numbing cream is applied 30–45 minutes prior to treatment to minimize discomfort. Most patients describe the sensation as a warm, prickly feeling. The Virtue RF system is widely regarded as one of the more comfortable RF microneedling platforms available.</p>
+        <p>Topical numbing cream is applied 30–45 minutes before treatment to minimize discomfort. Most patients describe the sensation as a warm, prickly feeling. The Virtue RF is widely regarded as one of the more comfortable RF microneedling platforms available.</p>
       </details>
 
       <details>
         <summary>How soon will I see results?</summary>
-        <p>Many patients notice an immediate "glow" and subtle firming effect due to mild swelling from the treatment. More significant collagen remodeling results — including improved skin texture, tightness, and scar reduction — typically become visible 4–8 weeks after treatment and continue to improve for up to 6 months.</p>
+        <p>Many patients notice an immediate glow and subtle firming effect. More significant collagen remodeling results — improved texture, tightness, and scar reduction — typically become visible 4–8 weeks after treatment and continue improving for up to 6 months.</p>
       </details>
 
       <details>
         <summary>What is the downtime after Virtue RF?</summary>
-        <p>Most patients experience redness, mild swelling, and a sunburn-like sensation for 24–48 hours. Some patients may experience slight pinpoint bruising or a bronzed appearance for a few days. Makeup can typically be applied 24 hours post-treatment. Full social activities can usually resume within 1–2 days.</p>
+        <p>Most patients experience redness, mild swelling, and a sunburn-like sensation for 24–48 hours. Some may experience slight pinpoint bruising. Makeup can typically be applied 24 hours post-treatment and most daily activities resume within 1–2 days.</p>
       </details>
 
       <details>
         <summary>Can Virtue RF be combined with other treatments?</summary>
-        <p>Yes! Virtue RF pairs beautifully with other treatments such as BOTOX®, dermal fillers, chemical peels, and the Cartessa PHYSIQ body contouring system. Your provider will build a customized combination plan to maximize your results. We typically recommend spacing treatments appropriately to allow for healing.</p>
+        <p>Yes — Virtue RF pairs beautifully with BOTOX®, dermal fillers, chemical peels, and the Cartessa PHYSIQ body contouring system. Your provider will build a customized combination plan to maximize your results, spacing treatments appropriately to allow for healing.</p>
       </details>
 
       <details>
         <summary>Is Virtue RF safe for darker skin tones?</summary>
-        <p>Absolutely. Unlike many laser-based treatments, Virtue RF's insulated needle technology delivers energy directly to the dermis while protecting the epidermis. This makes it one of the safest and most effective skin-resurfacing options for patients with medium to deep skin tones (Fitzpatrick types IV–VI) with a low risk of post-inflammatory hyperpigmentation.</p>
+        <p>Absolutely. Unlike many laser-based treatments, Virtue RF's insulated needle technology delivers energy directly to the dermis while protecting the epidermis — making it one of the safest resurfacing options for patients with medium to deep skin tones (Fitzpatrick IV–VI) with low risk of post-inflammatory hyperpigmentation.</p>
       </details>
 
       <details>
         <summary>How is Virtue RF different from regular microneedling?</summary>
-        <p>Traditional microneedling creates micro-channels in the skin to stimulate surface-level collagen. Virtue RF takes this further by delivering radiofrequency energy deep into the dermis through each needle, generating significantly more heat-induced collagen remodeling. The result is more pronounced skin tightening, contouring, and textural improvement than standard microneedling alone.</p>
+        <p>Traditional microneedling creates surface-level micro-channels to stimulate collagen. Virtue RF delivers radiofrequency energy deep into the dermis through each needle, generating significantly more heat-induced collagen remodeling — resulting in more pronounced skin tightening and textural improvement than standard microneedling alone.</p>
       </details>
 
       <details>
-        <summary>What is the cost of Virtue RF at Alpha Aesthetics & Health?</summary>
-        <p>Pricing varies based on the treatment area and the number of sessions in your personalized plan. We encourage you to book a complimentary consultation with our team for an accurate, customized quote. We also accept CareCredit financing to make treatments more accessible.</p>
+        <summary>What does Virtue RF cost at Alpha Aesthetics &amp; Health?</summary>
+        <p>Pricing varies based on treatment area and the number of sessions in your personalized plan. Book a complimentary consultation for an accurate custom quote. We also accept CareCredit financing to make treatments more accessible.</p>
       </details>
 
     </div>
@@ -645,11 +749,9 @@
   <!-- ══ FOOTER ══ -->
   <footer>
     <div class="footer-grid">
+
       <div>
         <img src="images/logoblackandwhite.png" alt="Alpha Aesthetics & Health" style="height:60px; margin-bottom:16px; filter:brightness(1.8);" />
         <p>3450 Old Milton Parkway<br />Alpharetta, GA 30005</p>
         <br />
-        <a href="tel:4706104550">(470) 610-4550</a>
-        <div class="social-links">
-          <a href="https://www.facebook.com/profile.php?id=61555865313019" aria-label="Facebook" target="_blank" rel="noopener">f</a>
-          <a href="https://www.instagram.com/alphaaestheticshealth/" aria-label="
+        <a href="tel:4706104550">(470) 610-4
