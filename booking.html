@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Book a private, one-on-one wellness consultation at Alpha Aesthetics & Health. Boutique by appointment — personalized care, no wait rooms, no rush." />
+  <title>Book Your Consultation | Alpha Aesthetics & Health</title>
+  <link rel="icon" type="image/webp" href="images/logo.webp" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --teal:      #4a8fa0;
+      --teal-dark: #3a7080;
+      --teal-pale: #edf4f6;
+      --gold:      #c8a96e;
+      --gray:      #8a8a8a;
+      --light:     #f7f5f3;
+      --white:     #ffffff;
+      --text:      #2c2c2c;
+      --border:    #e0dbd5;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 5%;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .logo { height: 60px; }
+    .nav-phone {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      color: var(--teal);
+    }
+    .nav-phone a { color: inherit; }
+
+    /* ── HERO SPLIT ── */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 88vh;
+    }
+
+    .hero-left {
+      background: linear-gradient(160deg, #1b3340 0%, #2d5566 60%, #3a7080 100%);
+      padding: 80px 8% 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-left::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      background: rgba(200,169,110,0.08);
+    }
+    .hero-left::after {
+      content: '';
+      position: absolute;
+      bottom: -40px; left: -40px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(74,143,160,0.15);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(200,169,110,0.15);
+      border: 1px solid rgba(200,169,110,0.3);
+      color: var(--gold);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 7px 16px;
+      border-radius: 2px;
+      margin-bottom: 32px;
+      width: fit-content;
+    }
+    .badge::before { content: '◆'; font-size: 7px; }
+
+    .hero-left h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(40px, 5vw, 62px);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+    .hero-left h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-left .subtext {
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.9;
+      max-width: 420px;
+      margin-bottom: 40px;
+      font-weight: 300;
+    }
+
+    .hero-divider {
+      width: 48px;
+      height: 1px;
+      background: var(--gold);
+      margin-bottom: 32px;
+      opacity: 0.6;
+    }
+
+    /* Value props */
+    .value-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+    .value-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+    .value-list .vicon {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: rgba(200,169,110,0.2);
+      border: 1px solid rgba(200,169,110,0.4);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .value-list .vicon svg {
+      width: 13px; height: 13px;
+      stroke: var(--gold); fill: none; stroke-width: 2.2;
+    }
+    .value-list strong { color: var(--white); font-weight: 500; }
+
+    /* ── RIGHT: FORM PANEL ── */
+    .hero-right {
+      background: var(--light);
+      padding: 60px 8% 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .form-header {
+      margin-bottom: 36px;
+    }
+    .form-header .eyebrow {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 10px;
+    }
+    .form-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 34px;
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+    .form-header p {
+      font-size: 13px;
+      color: var(--gray);
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    /* Form fields */
+    .form-group { margin-bottom: 18px; }
+    .form-group label {
+      display: block;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 7px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      font-family: 'Jost', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text);
+      background: var(--white);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+      appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(74,143,160,0.08);
+    }
+    .form-group textarea { min-height: 90px; resize: vertical; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+    .select-wrap { position: relative; }
+    .select-wrap::after {
+      content: '▾'; position: absolute; right: 14px; top: 50%;
+      transform: translateY(-50%); color: var(--gray); pointer-events: none;
+    }
+
+    /* Radio group */
+    .radio-group {
+      display: flex; gap: 20px; flex-wrap: wrap; margin-top: 4px;
+    }
+    .radio-group label {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 13px; letter-spacing: 0; text-transform: none;
+      color: var(--text); cursor: pointer; font-weight: 400;
+    }
+    .radio-group input[type="radio"] {
+      width: 16px; height: 16px;
+      accent-color: var(--teal); cursor: pointer;
+    }
+
+    .btn-book {
+      width: 100%;
+      padding: 16px;
+      background: var(--teal);
+      color: var(--white);
+      border: none;
+      border-radius: 2px;
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      margin-top: 8px;
+    }
+    .btn-book:hover { background: var(--teal-dark); transform: translateY(-1px); }
+    .btn-book:active { transform: translateY(0); }
+
+    .form-note {
+      font-size: 11px;
+      color: var(--gray);
+      text-align: center;
+      margin-top: 12px;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* Thank you */
+    .thank-you {
+      display: none;
+      text-align: center;
+      padding: 48px 24px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+    }
+    .ty-icon {
+      width: 60px; height: 60px;
+      background: var(--teal);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .ty-icon svg { width: 28px; height: 28px; stroke: #fff; fill: none; stroke-width: 2.5; }
+    .thank-you h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px; font-weight: 400;
+      color: var(--teal-dark); margin-bottom: 12px;
+    }
+    .thank-you p { font-size: 13px; color: var(--gray); line-height: 1.9; font-weight: 300; }
+
+    /* ── TRUST STRIP ── */
+    .trust-strip {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 32px 5%;
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+    .trust-item svg {
+      width: 20px; height: 20px;
+      stroke: var(--teal); fill: none; stroke-width: 2;
+      flex-shrink: 0;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .how-section {
+      padding: 80px 5%;
+      background: var(--light);
+    }
+    .section-head {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .section-head .eyebrow {
+      font-size: 10px; font-weight: 600;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--teal); margin-bottom: 12px;
+    }
+    .section-head h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 400; color: var(--text);
+      line-height: 1.2; margin-bottom: 14px;
+    }
+    .section-head p {
+      font-size: 13px; color: var(--gray);
+      line-height: 1.9; font-weight: 300;
+      max-width: 560px; margin: 0 auto;
+    }
+
+    .steps-grid {
+      max-width: 960px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .step-card {
+      background: var(--white);
+      padding: 36px 28px;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      text-align: center;
+      transition: box-shadow 0.2s;
+    }
+    .step-card:hover { box-shadow: 0 8px 32px rgba(74,143,160,0.1); }
+    .step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 52px; font-weight: 300;
+      color: var(--teal); opacity: 0.35;
+      line-height: 1; margin-bottom: 16px;
+    }
+    .step-card h3 {
+      font-size: 13px; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--text); margin-bottom: 12px;
+    }
+    .step-card p { font-size: 13px; color: var(--gray); line-height: 1.8; font-weight: 300; }
+
+    /* ── ABOUT / ANGLE SECTION ── */
+    .angle-section {
+      padding: 80px 5%;
+      background: var(--white);
+    }
+    .angle-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    .angle-text .eyebrow {
+      font-size: 10px; font-weight: 600;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 16px;
+    }
+    .angle-text h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(30px, 3.5vw, 44px);
+      font-weight: 400; color: var(--text);
+      line-height: 1.25; margin-bottom: 20px;
+    }
+    .angle-text p {
+      font-size: 13px; color: var(--gray);
+      line-height: 2; font-weight: 300; margin-bottom: 20px;
+    }
+    .angle-text .highlight-box {
+      background: var(--teal-pale);
+      border-left: 3px solid var(--teal);
+      padding: 16px 20px;
+      font-size: 13px;
+      color: var(--teal-dark);
+      line-height: 1.8;
+      font-style: italic;
+      border-radius: 0 2px 2px 0;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .service-chip {
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      color: var(--text);
+    }
+    .service-chip svg {
+      width: 14px; height: 14px;
+      stroke: var(--teal); fill: none; stroke-width: 2;
+      flex-shrink: 0;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #1b2e38;
+      color: rgba(255,255,255,0.6);
+      padding: 40px 5% 24px;
+      text-align: center;
+    }
+    .footer-logo { height: 56px; margin: 0 auto 20px; filter: brightness(0) invert(1); opacity: 0.5; }
+    footer p { font-size: 12px; line-height: 1.9; font-weight: 300; }
+    footer a { color: var(--teal); }
+    .footer-divider { width: 40px; height: 1px; background: rgba(255,255,255,0.15); margin: 20px auto; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left { padding: 60px 6% 40px; min-height: 50vh; }
+      .hero-right { padding: 40px 6% 60px; }
+      .steps-grid { grid-template-columns: 1fr; max-width: 440px; }
+      .angle-inner { grid-template-columns: 1fr; gap: 40px; }
+      .trust-strip { gap: 28px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="index.html">
+    <img class="logo" src="images/logo.webp" alt="Alpha Aesthetics Logo" onerror="this.style.display='none'" />
+  </a>
+  <div class="nav-phone">
+    Questions? <a href="tel:4706104550">(470) 610-4550</a>
+  </div>
+</nav>
+
+<!-- ── HERO SPLIT ── -->
+<section class="hero">
+
+  <!-- LEFT: MESSAGING -->
+  <div class="hero-left">
+    <div class="badge">Private · By Appointment Only</div>
+
+    <h1>Wellness,<br/>Delivered<br/><em>On Your Terms</em></h1>
+
+    <div class="hero-divider"></div>
+
+    <p class="subtext">
+      Alpha Aesthetics &amp; Health operates as a boutique, concierge-style wellness practice. Our network of licensed providers and health specialists come to <em>you</em> — or meet you privately at our Alpharetta studio. No crowded waiting rooms. No rushed appointments. Just focused, personalized care.
+    </p>
+
+    <ul class="value-list">
+      <li>
+        <div class="vicon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div><strong>100% Natural-First Philosophy</strong><br/>Every provider in our network uses evidence-backed, all-natural protocols and home-health models — the rising demand for this approach is exactly why we exist.</div>
+      </li>
+      <li>
+        <div class="vicon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div><strong>Book Now, We'll Coordinate Everything</strong><br/>Submit your request and a dedicated wellness coordinator will personally reach out within 24 hours to match you with the right provider and time.</div>
+      </li>
+      <li>
+        <div class="vicon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div><strong>Exclusive &amp; Unhurried</strong><br/>Our studio sees one client at a time. Your visit is private, focused, and built entirely around your wellness goals.</div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- RIGHT: BOOKING FORM -->
+  <div class="hero-right">
+
+    <div class="form-header">
+      <p class="eyebrow">Request Your Appointment</p>
+      <h2>Reserve Your Private Consultation</h2>
+      <p>Fill out the form below. We'll personally reach out within 24 hours to confirm your appointment details and answer any questions.</p>
+    </div>
+
+    <form id="bookingForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="firstName">First Name *</label>
+          <input type="text" id="firstName" name="firstName" placeholder="First name" required />
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name *</label>
+          <input type="text" id="lastName" name="lastName" placeholder="Last name" required />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" placeholder="your@email.com" required />
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number *</label>
+        <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" required />
+      </div>
+
+      <div class="form-group">
+        <label>Are you a new or returning client? *</label>
+        <div class="radio-group">
+          <label><input type="radio" name="clientStatus" value="New Client" required /> New Client</label>
+          <label><input type="radio" name="clientStatus" value="Returning Client" /> Returning Client</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="service">Service of Interest *</label>
+        <div class="select-wrap">
+          <select id="service" name="service" required>
+            <option value="" disabled selected>Select a service…</option>
+            <option>Alternative &amp; Natural Therapies</option>
+            <option>Medical Weight Loss</option>
+            <option>Injectables (BOTOX® / Fillers)</option>
+            <option>Skin Rejuvenation &amp; Treatments</option>
+            <option>Microneedling / RF Microneedling</option>
+            <option>Hormone Wellness &amp; Balancing</option>
+            <option>Peptide Therapy</option>
+            <option>General Wellness Consultation</option>
+            <option>Not Sure — I'd Like Guidance</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="preferred">Preferred Days / Times</label>
+        <input type="text" id="preferred" name="preferred" placeholder="e.g. Weekday mornings, Saturday…" />
+      </div>
+
+      <div class="form-group">
+        <label for="message">Anything Else We Should Know?</label>
+        <textarea id="message" name="message" placeholder="Health goals, concerns, questions — the more detail, the better we can prepare for your visit."></textarea>
+      </div>
+
+      <button type="submit" class="btn-book">Request My Appointment →</button>
+      <p class="form-note">🔒 Your information is private and never shared. A team member will personally follow up within 24 hours.</p>
+    </form>
+
+    <!-- Thank you state -->
+    <div class="thank-you" id="thankYou">
+      <div class="ty-icon">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h3>You're on the books.</h3>
+      <p>Thank you for reaching out. A wellness coordinator from Alpha Aesthetics will personally contact you within 24 hours to confirm your appointment and walk you through what to expect.<br/><br/>We look forward to meeting you.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── TRUST STRIP ── -->
+<div class="trust-strip">
+  <div class="trust-item">
+    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    Private One-on-One Sessions
+  </div>
+  <div class="trust-item">
+    <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+    All-Natural Protocols
+  </div>
+  <div class="trust-item">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+    24-Hour Response Guarantee
+  </div>
+  <div class="trust-item">
+    <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+    Licensed Provider Network
+  </div>
+</div>
+
+<!-- ── HOW IT WORKS ── -->
+<section class="how-section">
+  <div class="section-head">
+    <p class="eyebrow">Simple Process</p>
+    <h2>How It Works</h2>
+    <p>Getting started is easy. We handle all the coordination so your only job is showing up ready to feel your best.</p>
+  </div>
+
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-num">01</div>
+      <h3>Submit Your Request</h3>
+      <p>Fill out the short form above with your goals and preferred timing. No obligation — just a conversation starter.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">02</div>
+      <h3>We Reach Out</h3>
+      <p>A dedicated wellness coordinator personally contacts you within 24 hours to confirm your appointment and answer any questions.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">03</div>
+      <h3>Your Private Visit</h3>
+      <p>Arrive at our Alpharetta studio for your private, one-on-one consultation. No waiting, no rush — just focused care tailored to you.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT / ANGLE ── -->
+<section class="angle-section">
+  <div class="angle-inner">
+
+    <div class="angle-text">
+      <p class="eyebrow">Why Appointment-Only?</p>
+      <h2>A New Model for a New Era of Wellness</h2>
+      <p>
+        Over the past few years, a quiet but significant shift has taken place in wellness. More and more licensed providers — estheticians, hormone specialists, weight loss coaches, and regenerative health practitioners — have moved to <strong>home-health and concierge models</strong>, prioritizing one-on-one relationships over high-volume clinic settings.
+      </p>
+      <p>
+        The all-natural, integrative approach they champion has created extraordinary demand. Alpha Aesthetics was built as a dedicated home base for exactly this kind of care — a professional, welcoming space where clients get undivided attention from providers who genuinely know them.
+      </p>
+      <div class="highlight-box">
+        "We aren't just a med spa. We're a curated gateway to personalized wellness — matching the right provider, the right protocol, and the right environment to each individual client."
+      </div>
+    </div>
+
+    <div>
+      <div class="services-grid">
+        <div class="service-chip">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Alternative Therapies
+        </div>
+        <div class="service-chip">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          Hormone Wellness
+        </div>
+        <div class="service-chip">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          Medical Weight Loss
+        </div>
+        <div class="service-chip">
+          <svg viewBox="0 0 24 24"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/></svg>
+          Peptide Therapy
+        </div>
+        <div class="service-chip">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          Skin Treatments
+        </div>
+        <div class="service-chip">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Injectables &amp; Fillers
+        </div>
+        <div class="service-chip">
+          <svg viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg>
+          Microneedling / RF
+        </div>
+        <div class="service-chip">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+          Wellness Guidance
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <img class="footer-logo" src="images/logo.webp" alt="Alpha Aesthetics Logo" onerror="this.style.display='none'" />
+  <p>3450 Old Milton Parkway, Suite 100 · Alpharetta, GA 30005</p>
+  <p><a href="tel:4706104550">(470) 610-4550</a> &nbsp;·&nbsp; <a href="mailto:info@alphaaesthetichealth.com">info@alphaaesthetichealth.com</a></p>
+  <div class="footer-divider"></div>
+  <p>© 2026 Alpha Aesthetics &amp; Health &nbsp;|&nbsp; <a href="index.html">Home</a> &nbsp;|&nbsp; <a href="contact.html">Contact</a></p>
+  <p style="margin-top:10px; font-size:11px; opacity:0.5;">Individual results are not guaranteed and may vary. Images may contain models. By Appointment Only.</p>
+</footer>
+
+<script>
+  const form = document.getElementById('bookingForm');
+  const thankYou = document.getElementById('thankYou');
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const data = {
+      firstName:    document.getElementById('firstName').value,
+      lastName:     document.getElementById('lastName').value,
+      email:        document.getElementById('email').value,
+      phone:        document.getElementById('phone').value,
+      clientStatus: document.querySelector('input[name="clientStatus"]:checked')?.value || '',
+      service:      document.getElementById('service').value,
+      preferred:    document.getElementById('preferred').value,
+      message:      document.getElementById('message').value,
+      submittedAt:  new Date().toLocaleString()
+    };
+
+    try {
+      await fetch('https://script.google.com/macros/s/AKfycbw_H2wy1AxY4KrG9SxLlvrLL22aqKmqpaZcLrRvndvMQMCWTg0p131sIDAbGn_pSpLl/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        body: JSON.stringify(data)
+      });
+      form.style.display = 'none';
+      thankYou.style.display = 'block';
+      window.scrollTo({ top: thankYou.offsetTop - 80, behavior: 'smooth' });
+    } catch {
+      alert('Something went wrong. Please call us at (470) 610-4550.');
+    }
+  });
+</script>
+
+</body>
+</html>
