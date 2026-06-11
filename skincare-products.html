@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medical-Grade Skincare Products Alpharetta GA | Alpha Aesthetics & Health</title>
+  <meta name="description" content="Shop medical-grade skincare and supplements at Alpha Aesthetics & Health in Alpharetta, GA. Cleansers, serums, brightening pads, peptide creams, and more." />
+  <meta name="keywords" content="medical grade skincare Alpharetta, brightening pads Georgia, peptide serum Alpharetta, retinol Alpharetta GA, skincare products med spa" />
+  <link rel="canonical" href="https://mymentorbrandon.github.io/alpha-aesthetics/skincare-products.html" />
+  <link rel="icon" type="image/webp" href="images/logo.webp" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root { --teal:#4a8fa0; --teal-dark:#3a7080; --gray:#8a8a8a; --light:#f7f5f3; --white:#ffffff; --text:#333; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Montserrat',sans-serif; color:var(--text); background:var(--white); }
+    a { text-decoration:none; color:inherit; }
+    img { max-width:100%; display:block; }
+    .top-banner { background:var(--teal); color:var(--white); text-align:center; padding:10px 20px; font-size:13px; letter-spacing:1px; }
+    .top-banner a { display:inline-block; margin-left:16px; background:var(--white); color:var(--teal); padding:5px 16px; border-radius:2px; font-weight:700; font-size:12px; }
+    nav { display:flex; align-items:center; justify-content:space-between; padding:16px 5%; background:var(--white); box-shadow:0 2px 8px rgba(0,0,0,0.07); position:sticky; top:0; z-index:100; }
+    .logo { height:70px; }
+    .nav-links { display:flex; gap:28px; list-style:none; }
+    .nav-links a { font-size:12px; letter-spacing:2px; font-weight:600; color:var(--gray); transition:color .2s; }
+    .nav-links a:hover { color:var(--teal); }
+    .nav-cta { background:var(--teal); color:var(--white) !important; padding:10px 20px; border-radius:2px; letter-spacing:1.5px; font-size:12px; font-weight:700; }
+
+    .page-header { background:var(--light); padding:60px 8% 40px; }
+    .back-link { display:inline-flex; align-items:center; gap:8px; font-size:12px; letter-spacing:2px; font-weight:700; color:var(--teal); margin-bottom:24px; }
+    .section-label { font-size:12px; letter-spacing:4px; color:var(--teal); font-weight:700; text-transform:uppercase; margin-bottom:10px; }
+    .section-title { font-family:'Cormorant Garamond',serif; font-size:clamp(28px,4vw,46px); color:var(--teal-dark); margin-bottom:16px; }
+    .page-header p { font-size:14px; line-height:1.9; color:#555; max-width:760px; }
+
+    .btn { display:inline-block; padding:14px 32px; font-size:12px; letter-spacing:2px; font-weight:700; border-radius:2px; transition:background .2s; }
+    .btn-teal { background:var(--teal); color:var(--white); }
+    .btn-teal:hover { background:var(--teal-dark); }
+    .btn-white { background:var(--white); color:var(--teal); }
+
+    /* WHY MEDICAL-GRADE */
+    .why { padding:80px 8%; background:var(--white); }
+    .why-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:24px; margin-top:40px; }
+    .why-card { border:1px solid #e8e4e0; border-top:3px solid var(--teal); padding:28px 22px; border-radius:4px; }
+    .why-card .icon { font-size:26px; margin-bottom:12px; }
+    .why-card h3 { font-size:12px; letter-spacing:2px; font-weight:700; color:var(--teal-dark); margin-bottom:10px; }
+    .why-card p { font-size:13px; line-height:1.8; color:#666; }
+
+    /* PRODUCT TABLES */
+    .products { padding:80px 8%; background:var(--light); }
+    .product-section { margin-bottom:60px; }
+    .product-section h3 { font-size:12px; letter-spacing:4px; font-weight:700; color:var(--teal); border-bottom:2px solid var(--teal); padding-bottom:10px; margin-bottom:24px; }
+    .product-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:16px; }
+    .product-card {
+      background:var(--white); border-radius:4px; padding:20px;
+      display:flex; flex-direction:column; gap:8px;
+      box-shadow:0 1px 4px rgba(0,0,0,0.06);
+    }
+    .product-card .product-name { font-size:13px; font-weight:600; color:var(--text); }
+    .product-card .product-price { font-size:14px; font-weight:700; color:var(--teal-dark); }
+    .product-card .product-note { font-size:11px; color:#888; font-style:italic; }
+
+    /* SUPPLEMENTS */
+    .supplements { padding:80px 8%; background:var(--white); }
+    .supp-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:16px; margin-top:32px; }
+    .supp-card { background:var(--light); border-radius:4px; padding:20px; display:flex; flex-direction:column; gap:6px; }
+    .supp-card .supp-name { font-size:13px; font-weight:600; color:var(--text); }
+    .supp-card .supp-price { font-size:14px; font-weight:700; color:var(--teal-dark); }
+
+    .cta-banner { background:linear-gradient(135deg,#1a3a42 0%,#2a5a6a 100%); padding:80px 8%; text-align:center; }
+    .cta-banner h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(28px,4vw,46px); color:var(--white); margin-bottom:16px; }
+    .cta-banner p { font-size:13px; color:rgba(255,255,255,0.8); max-width:580px; margin:0 auto 32px; line-height:1.9; }
+
+    footer { background:#2a2a2a; color:rgba(255,255,255,0.7); padding:40px 8% 24px; }
+    .footer-bottom { border-top:1px solid rgba(255,255,255,0.1); padding-top:20px; font-size:12px; text-align:center; color:rgba(255,255,255,0.4); margin-top:20px; }
+    footer a { color:rgba(255,255,255,0.65); }
+    footer a:hover { color:var(--teal); }
+    @media (max-width:768px) { .nav-links { display:none; } }
+  </style>
+</head>
+<body>
+
+<div class="top-banner">Receive 20% off your first treatment! <a href="booking.html">BOOK NOW</a></div>
+
+<nav>
+  <a href="index.html"><img class="logo" src="images/logo.webp" alt="Alpha Aesthetics Logo" /></a>
+  <ul class="nav-links">
+    <li><a href="index.html">HOME</a></li>
+    <li><a href="index.html#services">SERVICES</a></li>
+    <li><a href="booking.html" class="nav-cta">BOOK NOW</a></li>
+  </ul>
+</nav>
+
+<div class="page-header">
+  <a href="index.html" class="back-link">← BACK TO ALL SERVICES</a>
+  <p class="section-label">TAKE YOUR RESULTS HOME</p>
+  <h1 class="section-title">Medical-Grade Skincare<br>& Supplements</h1>
+  <p>The treatments you receive in our clinic work best when paired with the right at-home care. Our medical-grade skincare line and physician-recommended supplements are available exclusively through our Alpharetta practice — because what you use at home matters as much as what we do in the treatment room.</p>
+</div>
+
+<section class="why">
+  <p class="section-label">WHY MEDICAL-GRADE?</p>
+  <h2 class="section-title">Not All Skincare Is Equal</h2>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="icon">🔬</div>
+      <h3>CLINICAL STRENGTH</h3>
+      <p>Medical-grade products contain active ingredients at concentrations proven to make a real difference — far above what over-the-counter retail products are allowed to include.</p>
+    </div>
+    <div class="why-card">
+      <div class="icon">✅</div>
+      <h3>PHYSICIAN VETTED</h3>
+      <p>Every product we carry has been reviewed and approved by our medical director. No questionable ingredients, no false claims.</p>
+    </div>
+    <div class="why-card">
+      <div class="icon">🛡</div>
+      <h3>AMERICAN SOURCED</h3>
+      <p>Consistent with our practice's standards, all products are sourced from trusted, regulated American suppliers.</p>
+    </div>
+    <div class="why-card">
+      <div class="icon">📈</div>
+      <h3>EXTENDS TREATMENT RESULTS</h3>
+      <p>Our providers recommend specific products to complement your in-clinic treatments and maintain results between visits.</p>
+    </div>
+  </div>
+</section>
+
+<section class="products">
+  <p class="section-label">SKINCARE PRODUCTS</p>
+  <h2 class="section-title">Our Product Line</h2>
+
+  <div class="product-section">
+    <h3>BRIGHTENING</h3>
+    <div class="product-grid">
+      <div class="product-card"><div class="product-name">4% Brightening Pads</div><div class="product-price">$145.00</div><div class="product-note">Gentle daily exfoliation with brightening actives</div></div>
+      <div class="product-card"><div class="product-name">6% Brightening Pads</div><div class="product-price">$159.00</div><div class="product-note">Enhanced strength for moderate hyperpigmentation</div></div>
+      <div class="product-card"><div class="product-name">8% Brightening Pads</div><div class="product-price">$180.00</div><div class="product-note">Clinical strength for stubborn dark spots</div></div>
+      <div class="product-card"><div class="product-name">Brightening Pads</div><div class="product-price">$98.00</div></div>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <h3>CLEANSERS</h3>
+    <div class="product-grid">
+      <div class="product-card"><div class="product-name">Clear Papaya Cleanser</div><div class="product-price">$40.00</div><div class="product-note">Enzyme-based gentle daily cleanser</div></div>
+      <div class="product-card"><div class="product-name">Gentle Green Tea Cleanser</div><div class="product-price">$35.00</div><div class="product-note">Antioxidant-rich, soothing formula for sensitive skin</div></div>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <h3>SERUMS & TREATMENTS</h3>
+    <div class="product-grid">
+      <div class="product-card"><div class="product-name">Collagen Vitamin C Serum</div><div class="product-price">$150.00</div><div class="product-note">Brightens, firms, and protects against free radical damage</div></div>
+      <div class="product-card"><div class="product-name">Firm & Hydrate HA Serum</div><div class="product-price">$117.00</div><div class="product-note">Hyaluronic acid serum for deep hydration and plumping</div></div>
+      <div class="product-card"><div class="product-name">Gentle Resurfacing Serum</div><div class="product-price">$106.00</div><div class="product-note">Exfoliating serum for smoother, more even skin texture</div></div>
+      <div class="product-card"><div class="product-name">Peptide Growth Factor Cream</div><div class="product-price">$150.00</div><div class="product-note">Regenerative peptides to boost collagen and repair skin</div></div>
+      <div class="product-card"><div class="product-name">Vita Renew 0.5 Retinol Serum</div><div class="product-price">$110.00</div><div class="product-note">Physician-grade retinol for anti-aging and skin renewal</div></div>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <h3>MOISTURIZERS & EYE CARE</h3>
+    <div class="product-grid">
+      <div class="product-card"><div class="product-name">Daily Defense BB Cream</div><div class="product-price">$50.00</div><div class="product-note">Tinted SPF moisturizer for everyday defense and coverage</div></div>
+      <div class="product-card"><div class="product-name">Night Restore Moisturizer</div><div class="product-price">$125.00</div><div class="product-note">Overnight recovery formula with peptides and ceramides</div></div>
+      <div class="product-card"><div class="product-name">Restorative Eye Complex</div><div class="product-price">$125.00</div><div class="product-note">Targets dark circles, puffiness, and fine lines around eyes</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="supplements">
+  <p class="section-label">SUPPLEMENTS</p>
+  <h2 class="section-title">Physician-Recommended Supplements</h2>
+  <p style="font-size:13px; line-height:1.9; color:#555; max-width:760px; margin-bottom:32px;">True wellness starts from the inside. Our supplement line is curated and approved by our medical director to support hormonal health, immune function, gut health, and overall vitality. These are not generic drugstore supplements — each product is formulated to clinical standards.</p>
+  <div class="supp-grid">
+    <div class="supp-card"><div class="supp-name">ADK10</div><div class="supp-price">$55.00</div></div>
+    <div class="supp-card"><div class="supp-name">Adren-All</div><div class="supp-price">$68.28</div></div>
+    <div class="supp-card"><div class="supp-name">Arnicare Gel & Oral Pellets</div><div class="supp-price">$16.50</div></div>
+    <div class="supp-card"><div class="supp-name">B-Complex</div><div class="supp-price">$37.00</div></div>
+    <div class="supp-card"><div class="supp-name">Bergamot BPF (60 cap)</div><div class="supp-price">$53.00</div></div>
+    <div class="supp-card"><div class="supp-name">BPC-157 LipoTab</div><div class="supp-price">$166.00</div></div>
+    <div class="supp-card"><div class="supp-name">CM Core (90 cap)</div><div class="supp-price">$51.00</div></div>
+    <div class="supp-card"><div class="supp-name">CoreRestore Detox Chocolate</div><div class="supp-price">$125.00</div></div>
+    <div class="supp-card"><div class="supp-name">CoreRestore Detox Vanilla</div><div class="supp-price">$125.00</div></div>
+    <div class="supp-card"><div class="supp-name">HiPhenolic</div><div class="supp-price">$54.60</div></div>
+    <div class="supp-card"><div class="supp-name">HRT-Complete E</div><div class="supp-price">$77.00</div></div>
+    <div class="supp-card"><div class="supp-name">HRT-Complete T</div><div class="supp-price">$108.00</div></div>
+    <div class="supp-card"><div class="supp-name">Ortho Biotic 30 cap</div><div class="supp-price">$40.00</div></div>
+    <div class="supp-card"><div class="supp-name">Thyroid Support</div><div class="supp-price">$52.00</div></div>
+  </div>
+  <p style="font-size:12px; color:#888; margin-top:20px; font-style:italic;">Supplements are available for purchase in clinic. Ask your provider which are right for your health goals.</p>
+</section>
+
+<section class="cta-banner">
+  <h2>Bring the Clinic Home</h2>
+  <p>Visit Alpha Aesthetics & Health in Alpharetta, GA to speak with our team about which products are right for your skin type and wellness goals. Our providers personalize every recommendation — no generic routines here.</p>
+  <a href="booking.html" class="btn btn-white">BOOK A CONSULTATION</a>
+</section>
+
+<footer>
+  <p style="font-size:13px;">© 2026 Alpha Aesthetics & Health &nbsp;|&nbsp; 3450 Old Milton Pkwy #100, Alpharetta, GA 30005 &nbsp;|&nbsp; <a href="tel:4706104550">(470) 610-4550</a></p>
+  <div class="footer-bottom"><a href="index.html">Home</a> &nbsp;|&nbsp; <a href="booking.html">Book Now</a> &nbsp;|&nbsp; Prices subject to change. Individual results may vary.</div>
+</footer>
+
+</body>
+</html>
