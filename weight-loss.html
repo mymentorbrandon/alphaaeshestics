@@ -24,9 +24,15 @@
     .nav-links a:hover { color:var(--teal); }
     .nav-cta { background:var(--teal); color:var(--white) !important; padding:10px 20px; border-radius:2px; letter-spacing:1.5px; font-size:12px; font-weight:700; }
     .hero {
+      position: relative;
       background: linear-gradient(rgba(0,0,0,0.52),rgba(0,0,0,0.52)),
-        url('https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/aAdYcGX60HqZV83oFzoF/media/954b9846-e429-47cf-a2e6-60f5430b50ff.jpeg') center/cover no-repeat;
-      min-height:55vh; display:flex; align-items:center; padding:0 8%;
+        url('images/weightloss.jpg') center 30%/cover no-repeat;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      padding: 0 8%;
+      background-attachment: fixed;
+      background-size: cover;
     }
     .hero-content h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(36px,5vw,66px); color:var(--white); line-height:1.1; text-shadow:2px 2px 0px rgba(0,0,0,0.9); }
     .hero-content p { color:rgba(255,255,255,0.9); font-size:13px; letter-spacing:2.5px; margin:14px 0 28px; text-shadow:1px 1px 0px rgba(0,0,0,0.8); }
@@ -177,5 +183,12 @@
   <div class="footer-bottom"><a href="index.html">Home</a> &nbsp;|&nbsp; <a href="booking.html">Book Now</a> &nbsp;|&nbsp; Individual results may vary. This is not a substitute for personalized medical advice.</div>
 </footer>
 
+<script>
+  window.addEventListener('scroll', function() {
+    var hero = document.querySelector('.hero');
+    var scroll = window.pageYOffset;
+    hero.style.backgroundPositionY = (30 + scroll * 0.3) + '%';
+  });
+</script>
 </body>
 </html>
